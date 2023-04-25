@@ -21,8 +21,8 @@ body{
 }
 
 #form:hover{
-    border-left: solid 5px #333;
-    border-right: solid 5px #333;
+/*     border-left: solid 5px #333;
+    border-right: solid 5px #333; */
     box-shadow: 0 0 10px rgba(63, 63, 63, 0.8);
 }
 
@@ -56,7 +56,7 @@ img{
 }
 
 
-.login_form #email_error,
+/* .login_form #email_error,
 .login_form #pass_error{
     margin-top: 5px;
     width: 317px;
@@ -67,9 +67,9 @@ img{
     padding: 3px, 8px;
     border-radius: 3px;
     border: 1px solid #e26666;
-    display: none; /*Na hiqen me display none nuk shfaqen */
+    display: none; /*Na hiqen me display none nuk shfaqen 
 }
-
+ */
 .form-control{
     border-bottom: 2px solid #adadad;  /*Hija nen katroret e email*/
 }
@@ -125,14 +125,14 @@ img{
 }
 
 #email:hover{
-    border-left: solid 5px #333;
-    border-right: solid 5px #333;
+/*     border-left: solid 5px #333;
+    border-right: solid 5px #333; */
     box-shadow: 0 0 10px rgba(63, 63, 63, 0.8);
 }
 
 #id1:hover {
-    border-left: solid 5px #333;
-    border-right: solid 5px #333;
+/*     border-left: solid 5px #333;
+    border-right: solid 5px #333; */
     box-shadow: 0 0 10px rgba(63, 63, 63, 0.8);
 }
 
