@@ -1,0 +1,174 @@
+.Form{
+    margin-top: 35px;
+    margin-bottom: 35px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(242, 224, 225);
+}
+
+.row{
+    background-color: white;       
+    border-radius: 30px;
+}
+
+#form:hover{
+    border-left: solid 5px #333;
+    border-right: solid 5px #333;
+    box-shadow: 0 0 10px rgba(63, 63, 63, 0.8);
+}
+
+img{
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.h1{
+    padding-top: 40px;
+    padding-bottom: 3px;
+}
+
+.btn1{
+    border: none;
+    outline: none;
+    height: 50px;
+    width: 100%;
+    background-color: black;
+    color:white;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.btn1:hover{
+    background:  rgb(242, 224, 227);
+    border: 1px solid;
+    color: black;
+    transition: .5s;
+    box-shadow: 0 0 10px rgba(63, 63, 63, 0.8);
+}
+
+
+.login_form #email_error,
+.login_form #pass_error{
+    margin-top: 5px;
+    width: 317px;
+    font-size: 18px;
+    color: #C62828;
+    background: rgba(255,0,0,0.1);
+    text-align: center;
+    padding: 3px, 8px;
+    border-radius: 3px;
+    border: 1px solid #e26666;
+    display: none; /*Na hiqen me display none nuk shfaqen */
+}
+
+.form-control{
+    border-bottom: 2px solid #adadad;  /*Hija nen katroret e email*/
+}
+
+#forgot-pw{
+   position: absolute;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   top: 0;
+   left: 0;
+   right: 0;
+   height: 0;
+   z-index: 1;
+   background: #fff;
+   opacity: 0;
+   transition: .6s;
+}
+
+#forgot-pw:target {
+    height: 80%;
+    opacity: 1;
+    width: 512px;
+}
+
+.submit-btn{
+    width: 120px;
+    height: 40px;
+    border: none;
+    outline: none;
+    background-color: black;
+    color:white;
+    border-radius: 4px;
+    font-weight: bold;
+    position: absolute;
+    align-items: center;
+    text-transform: uppercase; 
+    text-align: center;  
+    
+}
+.submit-btn:hover{
+    background:  rgb(242, 224, 227);
+    border: 1px solid;
+    color: black;
+    transition: .6s;
+}
+#email{
+    width: 330px;
+}
+
+#id1{
+    width: 270px;
+}
+
+#email:hover{
+    border-left: solid 5px #333;
+    border-right: solid 5px #333;
+    box-shadow: 0 0 10px rgba(63, 63, 63, 0.8);
+}
+
+#id1:hover {
+    border-left: solid 5px #333;
+    border-right: solid 5px #333;
+    box-shadow: 0 0 10px rgba(63, 63, 63, 0.8);
+}
+
+h2{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    
+}
+
+#register-here{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    z-index: 1;
+    background: #fff;
+    opacity: 0;
+    transition: .6s;
+ }
+ 
+ #register-here:target {
+     height: 80%;
+     opacity: 1;
+     width: 500px;
+ }
+
+ .close{
+    position: absolute;
+    right: 1.5rem;
+    top: 0rem;
+    font-size: 2.5rem;
+    font-weight:900;
+    text-decoration: none;
+    color: inherit;
+ }
