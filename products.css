@@ -1,0 +1,200 @@
+*{
+	margin:0px;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+html{
+  scroll-behavior: smooth;
+}
+header {
+  display: flex;
+  height: 125px;
+  align-items: center;
+  padding: 15px 5%;
+  position: relative;
+  width: 100%;
+  top: 0;
+  background-color:#afb8a9;
+}
+#panel {
+  padding: 50px;
+  display: none;
+}  
+#panel1{
+  height:150px;
+} 
+.logo {
+  padding: 0;
+}
+#logoja {
+  margin: auto;
+  width: auto;
+  height: 45px;
+}
+.nav_linqet {
+  list-style: none;
+  display: flex;
+  margin:auto;
+
+}
+.nav_linqet a {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  color: #f7f7f9;
+  text-decoration: none;
+}
+.nav_linqet li {
+  padding: 15px 20px;
+}
+.nav_linqet li a:hover {
+  color: #100020;
+  animation: bottomboder 0.5s;
+  animation-play-state: running;
+}
+.sub-menu-1{
+  display: none;
+}
+.sub-menu-1 ul{
+  list-style: none;
+}
+.nav_linqet li:hover .sub-menu-1{
+  display: block;
+  position: absolute;
+  background:#686e62;
+  margin-top: 15px;
+  margin-left: 15px;
+} 
+.audio2 {
+  float:right;
+  margin-right: 6%;
+  margin-top: 50px;
+  display:flex;
+  align-items: center;
+}
+.audio2 p{
+  font-size: 18px;
+  color: #5f5f5f;
+  font-weight: 400;
+  margin-right: 15px;
+}
+.audio2 #icon {
+  width: 40px;
+  cursor: pointer;
+}
+mark {
+  background-color: #afb8a9;
+  color: black;
+}
+#star td{
+  text-align: center;
+  color: #babafe;
+  font-family:"wide font";
+  font-size: 25px;
+}
+#star td:hover{
+  color:#3c0a6b;
+}
+span{
+  font-size: 20px;
+}
+#kfloke{
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 20px;
+}
+#klekure{
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 20px;
+}
+#kfytyre{
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 20px;
+}
+#button:hover{
+  color:black;
+}
+
+#pershkrimi-produktit{
+  text-align: center;
+  margin: 45px;
+  font-family: "Georgia";
+  margin-bottom:  45px;
+  }
+#emri-produktit {
+  text-align: center;
+  margin: 45px;
+  font-family: "Georgia";
+  margin-bottom:  45px;
+}
+#pershkrimi-prodhusit{
+  text-align: center;
+  margin: 40px;
+  font-family: "Helvetica";
+  font-size: 13px;
+  margin-bottom:  45px;
+  }
+td {
+  line-height: 25px;
+  color:#7b39ba;
+  }
+.pfoto{
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+  outline: .1rem solid #ccc;
+  outline-offset: -0.5rem color pink;
+
+}
+.pfoto:hover{
+  outline: .2rem solid #222;
+  outline-offset: 0;
+  transform:scale(0.95);
+  transform: rotate();
+}
+.tabela{
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+
+  }
+table{
+  border-spacing: 1.5px;
+
+  }
+.pfoto {
+  margin: 55px 55px 55px 55px;
+  width: auto;
+  height: 200px;
+  border-radius: 25px;
+  border: 1px solid white;
+  transition: transform 0.25s
+
+}  
+#kujdesi{
+  text-align: center;
+  font-style: italic;
+  color:rgb(5, 28, 29);
+  font-family: 'Lato',sans-serif;
+  }
+#cmimi{
+  padding: 5px;
+  font-size: 15px;
+  color: rgb(162, 118, 118);
+  }
+#button {
+  background: #afb8a9;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  width: 90px;
+  color : #fff;
+  height: 35px;
+  border-radius: 30px;
+  }
+
+  @media screen and (max-width: 600px){
+     .pfoto{
+      margin: 40px 40px 40px 40px;
+     }  
+     
+  }
