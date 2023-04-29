@@ -1,0 +1,229 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tips | Pearl Skin</title>
+    <link rel="shortcut icon" type="image/x-icon" href="logo3.png"/>
+    <link rel="stylesheet" href="tips.css">
+    <script src="tips.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    
+
+    <script>
+      // hide dhe show 
+        $(document).ready(function(){
+          $("#hide1").click(function(){
+            $(".p1").hide(1000);
+          });
+        $("#show1").click(function(){
+            $(".p1").show(1000);
+          });
+        });
+        $(document).ready(function(){
+          $("#hide3").click(function(){
+            $(".p3").hide(1000);
+          });
+          $("#show3").click(function(){
+            $(".p3").show(1000);
+          });
+        });
+        //fade
+        $(document).ready(function(){
+         $("#fade").click(function(){
+          $(".1").fadeToggle("slow");
+          $(".2").fadeToggle("slow");
+  });
+});
+//slide
+$(document).ready(function(){
+  $("#logo").click(function(){
+    $("#panel").slideToggle("slow");
+  });
+});
+//animate
+$(document).ready(function(){
+  $(".fsheh1").click(function(){
+    $(".card").animate({height:'toggle'});
+  });
+});
+
+//set
+$(document).ready(function(){
+  $("#btn1").click(function(){
+    $(".1").text("The best thing you can do for your skin, is to not smoke <3");
+  });
+});
+//add
+$(document).ready(function(){
+    $("#show3").click(function(){
+        $("ol.ol3").append("<li>Strong soaps and detergents can strip oil from your skin.</li>");
+        $("ol.ol3").append("<li>Choose mild cleansers.</li>");
+    })
+});
+//remove
+$(document).ready(function(){
+  $(".fsheh2").click(function(){
+    $("h3").remove(".title");
+  });
+});
+    </script>
+</head>
+<body>
+  
+  <header>
+  <ul class="nav_linqet">
+    <li><a href="home.html">Kthehu tek Home</a></li>
+    <li><a href="SkinCareTips.html">Kthehu tek Skin Care </a></li>
+ </header> 
+  <svg width="100" height="100">
+    <circle cx="20" cy="20" r="10" stroke="pink" stroke-width="3" fill="pink" />
+  </svg> 
+  <br>
+   <!--Perdorimi i CANVAS-->
+ <canvas id="test" width="190" height="100" style=" border: 2px solid #000000; 
+background-image: linear-gradient(rgb(189, 157, 226), rgb(215, 137, 215));background-size: 100% 100%;"> </canvas>
+
+    <div class="container">
+        <div class="card">
+            <div class="icon">
+                <img src="fotot/logo2.png" id="foto">
+            </div>
+            <div class="content">
+                <h3 class="title">1.Protect yourself from the sun</h3>
+                <p class="p1">One of the most important ways to take care of your skin is to protect it from the sun. 
+                    A lifetime of sun exposure can cause wrinkles, age spots and other skin problems — as well as increase the risk of skin cancer.
+                <br>
+                For the most complete sun protection:
+                  <ol class="p1"> 
+                    <li class="p1" style="color:white">Use sunscreen.</li>
+                    <li class="p1" style="color:white">Seek shade.</li>
+                    <li class="p1" style="color:white">Wear protective clothing.</li>
+                  </ol>
+                </p>
+            </div>
+            <button id="hide1">Fsheh</button>
+            <button id="show1">Shfaq</button>
+            
+        </div>
+        <div class="card">
+            <div class="icon">
+                <img src="fotot/logo2.png" id="foto">
+            </div>
+            <div class="content">
+                <h3 class="title">2. Don't smoke</h3>
+                <br>
+                <p class="1">Smoking makes your skin look older and contributes to wrinkles.
+                    <br>Smoking narrows the tiny blood vessels in the outermost layers of skin, which decreases blood flow and makes skin paler. 
+                    <br>This also depletes the skin of oxygen and nutrients that are important to skin health.
+                    <br>
+                    <i class="2" style="color:khaki">In addition, smoking increases your risk of squamous cell skin cancer.</i> 
+                </p>
+            </div>
+            <button id="fade">Shfaq/Fsheh Tekstin</button>
+            <button id="btn1">Shfaq edhe nje keshille</button>
+        </div>
+        <div class="card" id="card3">
+            <div class="icon">
+                <img src="fotot/logo2.png" id="foto">
+            </div>
+            <div class="content">
+                <h3 class="title">3. Treat your skin gently</h3>
+                <br>
+                <p class="p3">
+                    Daily cleansing and shaving can take a toll on your skin. 
+                    <br>To keep it gentle:
+                    <br>
+                    <ul style="color:white; list-style-type: square;" class="ol3">
+                   <li class="p3">Limit bath time.</li>
+                   <li class="p3">Water and long showers or baths remove oils from your skin.</li>
+                   <li class="p3">Limit your bath or shower time, and use warm — rather than hot — water.</li>
+                   <li class="p3">Avoid strong soaps.</li>
+            </ul>
+                </p>
+     
+            </div>
+            <button id="hide3">Fsheh</button>
+            <button id="show3">Shfaq</button>
+        </div>
+        
+    <div class="fsheh">
+      
+    <button id="fsheh1" class="fsheh1">Klikoni ketu per t'i fshehur/shfaqur keshillat</button>
+    <br><br>
+    <button id="fsheh2" class="fsheh2">Largoni titujt e keshillave</button>
+  
+</div>
+
+
+<div class="tabela" >
+  <br>
+  <br><br><br></br>
+<table border="1px" width="700px" style="border-color: #babafe;">
+  <tr>
+    <th colspan="6" style="background-color:#babafe">Skin Care Cheat Sheet<br>The Ordinary</th>
+  </tr>
+  <tr>
+    <td style="background-color:#babafe">ACID</td>
+    <td style="background-color:#babafe">Per cka perdoret</td>
+    <td style="background-color:#babafe">Cfare ben</td>
+    <td style="background-color:#babafe">Koha</td>
+    <td style="background-color:#babafe">Lloji i lekures</td>
+    <td style="background-color:#babafe">Ne konflikt me</td>
+  </tr>
+  <tr>
+    <td style="background-color:#babafe">Ferulic Acid</td>
+    <td bgcolor="pink">Signs of Aging, Textural Irregularities</td>
+    <td bgcolor="pink">Promotes Healthy Skin, Fights Free Radicals</td>
+    <td bgcolor="pink">AM & PM</td>
+    <td bgcolor="pink">All Skin Types</td>
+    <td bgcolor="pink">Buffet + Copper Peptides 1%</td>
+  </tr>
+  <tr>
+    <td style="background-color:#babafe">Lactic Acid</td>
+    <td bgcolor="pink">Uneven tone, Textural Irregularities, Fine Lines</td>
+    <td bgcolor="pink">Exfoliates, Increases Cell Turnover</td>
+    <td bgcolor="pink">PM</td>
+    <td bgcolor="pink">Sensitive</td>
+    <td bgcolor="pink">Strong acids, EUK 134 0.1% or Peptides</td>
+  </tr>
+  <tr>
+    <td style="background-color:#babafe">Salicylic Acid</td>
+    <td bgcolor="pink">Lackluster Tone, Textural Irregularities</td>
+    <td bgcolor="pink">Treats Breakouts, Clears Pores</td>
+    <td bgcolor="pink">AM & PM</td>
+    <td bgcolor="pink">Acne Prone/ Oily</td>
+    <td bgcolor="pink">Strong acids, EUK 134 0.1% or Peptides</td>
+  </tr>
+
+</table>
+ 
+</div>
+
+
+ <script>
+var c = document.getElementById("test");
+var ctx = c.getContext("2d");
+ctx.font = "30px Arial";
+ctx.fillText("PEARL SKIN",10,58); 
+</script>
+<script>
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+</script>
+<p id="drag">Drag the logo here:</p>
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<br>
+<img id="drag1" src="fotot/slide1.png" width="300px" height="200" draggable="true" ondragstart="drag(event)">  
+</body>
+</html>

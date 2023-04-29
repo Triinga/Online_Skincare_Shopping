@@ -1,0 +1,207 @@
+header {
+    display: flex;
+    height: 125px;
+    align-items: center;
+    padding: 15px 5%;
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    background-color:#afb8a9; 
+    z-index: 1;
+  }
+  .logo {
+    padding: 0;
+  }
+  #logoja {
+    margin: auto;
+    width: auto;
+    height: 45px;
+  }
+  .nav_linqet {
+    list-style: none;
+    display: inline-flex;
+    margin: auto;
+  }
+  .nav_linqet a {
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    color: #f7f7f9;
+    text-decoration: none;
+  }
+  .nav_linqet li {
+    padding: 15px 20px;
+  }
+  .nav_linqet li a:hover {
+    color: #100020;
+    animation: bottomboder 0.5s;
+    animation-play-state: running;
+  }
+  .sub-menu-1{
+    display: none;
+  }
+  .sub-menu-1 ul{
+    list-style: none;
+  }
+  .nav_linqet li:hover .sub-menu-1{
+    display: block;
+    position: absolute;
+    background: 'LightBlue';
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+  nav ul li a:active{
+    background-color: #675cff;
+    color: #fff;
+  }
+    
+   /* deri ketu headeri */
+    #panel {
+    padding: 50px;
+    display: none;
+  }  
+  #panel1{
+    height:150px;
+  } 
+  html{
+    background-image: url(fotot/skin2.png), url(fotot/bg.jpg);
+    background-position: bottom right, top left;
+   background-repeat: no-repeat, repeat;
+   padding: 20px;
+     width: 1px, 50px;
+  }
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    /* background-image: url(personal-care-products-icon.png), url(bg.jpg);
+    background-position: right bottom, left top;
+    background-repeat: no-repeat, repeat; */
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 110vh; */
+    /* background-color: rgb(242, 224, 227);  */
+}
+.p1{
+  text-decoration:double;
+}
+.container{
+    height: 500px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1200px;
+    flex-wrap: wrap;
+    top: 30px;
+    /* background-image: url(personal-care-products-icon.png), url(bg.jpg);
+    background-position: right bottom, left top;
+    background-repeat: no-repeat, repeat; */
+}
+.container .card{
+    position: relative;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    background: #3f3f3f;
+}
+button{
+  width:100px;
+  height:50px;
+  background-color: #babafe;
+}
+#fsheh1{
+  width:120px;
+  height:100px;
+  background-image: radial-gradient(rgb(150, 139, 195), rgb(187, 118, 228), rgb(225, 143, 188));
+  align-items: center;
+  margin:10px;
+  align-items: center;
+  font-size: 10px;
+}
+ #fsheh2{
+  width:120px;
+  height:100px;
+  margin: 10px;
+  background-image: radial-gradient(rgb(150, 139, 195), rgb(187, 118, 228), rgb(225, 143, 188));
+} 
+table{
+  border-spacing: 5px;
+  padding:5px;
+  margin-left: 0px;  
+margin-right: auto; 
+text-align: center;
+align-items: center;
+float: right;
+word-wrap: break-word;
+background-color: #f7f7f9;
+}
+
+.container .card::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 20px solid transparent;
+    border-top: 20px solid #babafe;
+    border-right: 20px solid #babafe;
+}
+
+.container .card.active::before{
+    border-top: 20px solid #ff3b7e;
+    border-right: 20px solid #ff3b7e;
+}
+
+.container .card .icon {
+    margin-bottom: 10px;
+}
+.container .card .icon img{
+   max-width: 90px;
+} 
+
+.container .card .content{
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+ }
+ .container .card.active .content{
+    height: auto;
+ }
+ .container .card .content::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(transparent, #3f3f3f3f);
+ }
+ .container .card.active .content::before{
+    display: none;
+ }
+ .container .card .content h3{
+    color: #fff;
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-bottom: 10px;
+ }
+ .container .card .content p{
+    font-weight: 300;
+    color: #ccc;
+ }
+ #div1 {
+  width: 350px;
+  height: 200px;
+  padding: 10px;
+  margin-left: auto;
+  border: 2px solid #aaaaaa;
+}
+#drag{
+  margin-left: auto;
+}
+
+ 
+ 
+ 

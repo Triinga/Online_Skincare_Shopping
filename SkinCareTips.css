@@ -1,0 +1,207 @@
+html{
+  scroll-behavior: smooth;
+background-repeat: no-repeat;
+}
+header {
+display: flex;
+height: 100px;
+align-items: center;
+padding: 15px 5%;
+position: relative;
+
+top: 0px;
+background-color:#afb8a9;
+margin-top: -20px;
+margin-left: -10px;
+margin-right: -10px;
+}
+#panel {
+  padding: 50px;
+  display: none;
+}  
+#panel1{
+  height:150px;
+} 
+.logo {
+  padding: 0;
+}
+#logoja {
+  margin: auto;
+  width: auto;
+  height: 45px;
+}
+.nav_linqet {
+  list-style: none;
+  display: flex;
+  margin:auto;
+}
+.nav_linqet a {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  color: #f7f7f9;
+  text-decoration: none;
+}
+.nav_linqet li {
+  padding: 15px 20px;
+}
+.nav_linqet li a:hover {
+  color: #100020;
+  animation: bottomboder 0.5s;
+  animation-play-state: running;
+}
+
+
+/* ketu perfundon headeri */
+
+
+html{
+  scroll-behavior: smooth;
+  transition: .6s;
+}
+
+.title{
+    text-align: center;
+}
+
+.tips{
+    background-color: rgb(242, 209, 210);
+    margin-left: 140px;
+    width: 1200;
+    height: 450;
+}
+
+#id1{
+    text-align: center;
+}
+
+#id2{
+    text-align: center;
+
+}
+
+body{
+    /* margin-top: 20px; */
+    background-color: rgb(242, 224, 225);
+}
+
+img{
+    margin-left: 30px;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: left;
+}
+
+.submit-btn{
+   width: 150px;
+   height: 40px;
+   background-color: rgb(242, 209, 210);
+   align-items: center;
+   text-transform: uppercase; 
+   text-align: center;  
+}
+.submit-btn:hover{
+    background:  rgb(242, 224, 227);
+    border: 1px solid;
+    color: black;
+    transition: .6s;
+}
+
+.tips2{
+    background-color:  rgb(242, 224, 225);
+    margin-left: 280px;
+    width: 1000;
+    height: 450;
+}
+.container {
+    width: 20%;
+}
+
+h1{
+    text-align: center;
+}
+
+hr{
+    width: 1000px;
+    border: solid 2px white;
+}
+
+
+  #pershkrimi-produktit{
+    text-align: center;
+    margin: 45px;
+    font-family: "Georgia";
+    margin-bottom:  45px;
+    }
+  #emri-produktit {
+    text-align: center;
+    margin: 45px;
+    font-family: "Georgia";
+    margin-bottom:  45px;
+  }
+  #pershkrimi-prodhusit{
+    text-align: center;
+    margin: 40px;
+    font-family: "Helvetica";
+    font-size: 13px;
+    margin-bottom:  45px;
+    }
+  
+  .pfoto{
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    outline: .1rem solid #ccc;
+    outline-offset: -0.5rem
+    color pink;
+  }
+ 
+  .tabela{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    width: fit-content;
+    height:fit-content;
+    }
+  .table{
+    border-spacing: 1.5px;
+    }
+  .pfoto {
+    margin: 55px 55px 55px 55px;
+    width: 200px;
+    transition: transform 0.25s
+  }  
+
+  .pfoto:hover{
+    outline-offset: 0;
+    transform:scale(0.95);
+    transform: rotate();
+  }
+
+  h4{
+    color: rgb(75, 75, 75);
+    text-shadow: 2px 2px 8px #a09494;
+  }
+
+  .btn{
+    width: 140px;
+    height: 30px;
+    background-color:rgb(242, 224, 227);
+    text-transform: uppercase; 
+    text-align: center;  
+    border-color: white;
+ }
+
+ .btn:hover{
+    background:  rgb(242, 224, 227);
+    transition: .6s;
+}
+
+#time{
+  text-align: center;
+  justify-items: center;
+}
+
+#demo{
+  text-align: center;
+  justify-items: center;
+  color:rgb(55, 58, 59);
+}
