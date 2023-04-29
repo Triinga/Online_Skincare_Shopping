@@ -1,0 +1,176 @@
+/*--------------------------------------------------------------------- File Name: style.css ---------------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------------- import Fonts ---------------------------------------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+
+/*****---------------------------------------- 1) font-family: 'Rajdhani', sans-serif;
+ 2) font-family: 'Poppins', sans-serif;
+ ----------------------------------------*****/
+
+
+/*--------------------------------------------------------------------- import Files ---------------------------------------------------------------------*/
+
+@import url(animate.min.css);
+@import url(normalize.css);
+@import url(meanmenu.css);
+@import url(owl.carousel.min.css);
+@import url(slick.css);
+@import url(jquery-ui.css);
+@import url(nice-select.css);
+
+
+h2 {
+     font-size: 22px
+}
+
+
+
+
+
+
+/** brand **/
+.brand {
+     padding-top: 60px;
+     border-top:#777676 solid 6px;}
+
+.brand-bg {
+     background: #ebebeb;
+     padding: 90px 0px;
+     font-family: Myriad Pro;
+}
+
+.margin {
+     margin-bottom: 30px;
+}
+
+
+.brand-bg .brand_box {
+     background: #fff;
+     text-align: center;
+     padding: 80px 0px 30px 0px ;
+}
+.brand-bg .brand_box > img {
+    height: 200px;
+    width: auto;
+}
+.brand-bg .brand_box h3 {
+
+     font-size: 27px;
+     font-weight: bold;
+     color: #131313;
+     padding: 17px 0px 0px 0px;
+}
+.red {
+     color: #777676;
+}
+
+.brand-bg .brand_box span {
+     display: block;
+     color: #19449b;
+     font-size: 16px;
+line-height: 16px;
+padding-bottom: 3px;
+} 
+.brand-bg .brand_box i {
+     padding: 0px 2px;
+}
+
+
+
+
+/** end brand **/
+
+/** contact **/
+.contact {
+     background: #ffffff;
+     padding: 90px 0px;
+}
+
+.titlepage {
+     padding-bottom: 60px;
+}
+
+.titlepage h2 {
+     font-size: 50px;
+     line-height: 40px;
+     font-weight: bold;
+     padding: 0;
+}
+
+.contact .main_form {
+     background: #fff;
+    box-shadow: #ddd 0px 0px 19px 1px;
+    padding: 40px;
+} 
+
+.form-control {
+     border: #777676 solid 2px;
+     border-radius: inherit;
+     margin-bottom: 30px;
+     padding: 13px 20px;
+     font-family: poppins;
+}
+.form-control:focus {
+     box-shadow: inherit;
+     border: #777676 solid 2px !important;
+}
+
+.textarea {
+     font-family: poppins;
+     border: #777676 solid 2px;
+     margin-bottom: 30px;
+     padding: 13px 20px;
+     width: 100%;
+     padding-top: 40px;
+} 
+
+.send {
+     font-family: poppins;
+    max-width: 212px;
+    margin: 0 auto;
+    display: block;
+    background: #000;
+    color: #fff;
+    padding: 12px 0px;
+    width: 100%;
+    font-size: 17px;
+}
+
+.send:hover {
+     background: #777676;
+}
+
+
+/** end contact **/
+
+     
+     
+/*--------------------------------------------------------------------- inner_page css ---------------------------------------------------------------------*/
+
+.brand_color {
+     background-color: #ddd;
+}
+.brand_color .titlepage {
+     margin-top: 90px;
+     padding-bottom: 90px;
+}
+
+.brand_color .abouttitle h2 {
+     color: #fff;
+     text-transform: uppercase;
+     font-size: 40px;
+     line-height: 45px;
+     padding: 40px 0;
+     font-weight: 500;
+     text-align: center;
+}
+.contact-page .Contact {
+     margin-top: 0px;
+}
+.contact-page .form-control {
+     margin-bottom: 20px;
+}
+
