@@ -1,0 +1,515 @@
+.all{
+  background-color: aliceblue;
+  
+}
+.all1{
+  width:100%;
+  position:absolute;
+  height:100vh;
+  top:0px;
+  bottom:0px;
+  left:0px;
+  right:0px;
+}
+
+
+/* header */
+header {
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 0%;
+  width: 100%;
+  background-color:#afb8a9;
+  color:black;
+  z-index: 1;
+}
+
+  .hdr{
+  background-color: #f8f9fa;
+  color:black;
+}
+
+
+  .logo {
+    padding: 0;
+}
+   #logoja {
+    margin: auto;
+    width: auto;
+    height: 45px;
+  }
+
+  .nav_linqet {
+    
+    list-style: none;
+    display: flex;
+    margin:auto;
+    margin-left: 400px;
+}
+  .nav_linqet a {
+ 
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    color:black;
+    text-decoration: none;
+    justify-content: center;
+  }
+  .nav_linqet li {
+    padding: 15px 20px;
+    justify-content: center;
+  }
+  .nav_linqet li a:hover {
+    color: #100020;
+    animation: bottomboder 0.5s;
+    animation-play-state: running;
+    justify-content: center;
+  }
+
+  
+  .search{
+  height: 40px;
+  width: 400px;
+  padding: 0 10px;
+  color: black;
+  font-weight:500;
+  background: white;
+  border: none;
+ 
+ }
+
+  .fa-search{
+  height: 40px;
+  width:40px;
+  display: flex;
+  background: #f2f2f2;
+  border-radius: 5px;
+ 
+  
+ }
+ 
+  .items{
+  display: inline-flex;
+  padding: 0 300px;
+ 
+ }
+
+  .items a{
+  text-decoration: none;
+  font-size: 18px;
+  padding: 0 12px;
+ }
+
+  .login{
+  position: relative;
+  top: 10px;
+  left: 320px; 
+  } 
+
+  
+  a:visited{
+  color: black;
+}
+  a:hover{
+  color:rgba(255, 0, 0, 0.4)
+}
+
+
+  .fa-user{
+  size: 100%;
+ }
+
+
+ /* button blej tani */
+  .button1{
+  position:relative;
+  overflow: hidden;
+    top:-130px; 
+    width:200px;
+    padding:15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #939fb6;
+    background: transparent;
+    color: black;
+    cursor: pointer;
+  
+  }
+
+
+ /* tabs te rejat-ne zbritje */
+[data-tab-content] {
+ 
+  display: none;
+justify-content: center;}
+  
+  .active[data-tab-content] {
+  display: block;
+  
+}
+  
+
+  .tab-content {
+  font-size: 15px;
+text-align:center;
+justify-content: center;
+} 
+
+  .tabs {
+    display: table;
+      margin: 0 auto;
+      font-size: 20px;
+      font-weight: 800;
+      cursor: pointer;
+      justify-content: center;
+    }
+
+
+
+
+  .tabs span {
+
+  padding: 10px;
+  align-items: center;
+
+
+}
+  
+
+  .tabs span:hover {
+  align-items: center;
+  cursor: pointer;
+  color: palevioletred;
+  align-self: center;
+}
+
+/* tabs - new */
+  .button2{
+  font-size:small;
+  position:relative;
+  right:-100px; 
+  top: -250px;
+  content: '';
+  width: 50px;
+   height: 30px;
+   border: none;
+  border-radius: 50%;
+  text-decoration: none;
+  cursor: pointer;
+  background: #efebe9;
+  color: #a1887f;
+}
+
+/* tabs - ne zbritje */
+  .button3{
+  font-size:small;
+  position:relative;
+  right:80px; 
+  top: 80px;
+  border: none;
+  content: '';
+  width: 50px;
+  height: 30px;
+  border-radius: 50% ;
+  text-decoration: none;
+  cursor: pointer;
+  background: red;
+  color: white;
+ }
+
+  h1{
+  font-size: 36px;
+  font-weight: 600;
+  
+}
+
+/* produktet tek tabs */
+#emri-produktit {
+  text-align: center;
+  margin: 45px;
+  font-family: "Georgia";
+  margin-bottom:  45px;
+}
+  .tabela{
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  width: fit-content;
+  height:fit-content;
+  }
+  table{
+  border-spacing: 1.5px;
+  }
+
+  .pfoto{
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    outline: .1rem solid #ccc;
+    outline-offset: -0.5rem;
+    color: pink;
+  }
+
+  #emri-produktit {
+    text-align: center;
+    margin: 45px;
+    font-family: "Georgia";
+    margin-bottom:  45px;
+  }
+
+  
+  #pershkrimi-produktit{
+  text-align: center;
+  margin: 45px;
+  font-family: "Georgia";
+  margin-bottom:  45px;
+  }
+
+  #pershkrimi-prodhusit{
+    text-align: center;
+    margin: 40px;
+    font-family: "Helvetica";
+    font-size: 13px;
+    margin-bottom:  45px;
+    }
+
+  .pfoto:hover{
+    outline: .2rem solid #222;
+    outline-offset: 0;
+    transform:scale(0.95);
+    transform: rotate();
+    }
+
+  .pfoto {
+    margin: 55px 55px 55px 55px;
+    width: auto;
+    height: 200px;
+    border-radius: 25px;
+    border: 1px solid white;
+    transition: transform 0.25s
+    }  
+@media screen and (max-width: 600px){
+  pfoto{
+  margin: 40px 40px 40px 40px;
+    } 
+    }
+    #cmimi{
+      text-decoration:none;
+     }  
+
+
+/* per keshillat */
+.new2{
+  width:100%;
+  text-align: left;
+}
+
+  .div_keshillat{
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-between;
+    margin-right: 130px;
+    margin-left:150px;
+}
+  .keshillat2{
+  background: #ffe7fa;
+  margin:0px;
+  padding: 10px 10px;
+  box-sizing: border-box;
+  word-spacing:3px; 
+} 
+  .buttonK{
+  font-size: large;
+  position:relative;
+  color:#efebe9; 
+  content: '';
+  width: 200px;
+   height: 40px;
+  border: none;
+  text-decoration: none;
+  margin: 4px 8px;
+  margin-left: 210px;
+  bottom: -15px;
+  background-color: rgb(69, 58, 58);
+  cursor: pointer;
+  }
+
+  /* po keto i keni pare */
+.section3{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 50px;
+}
+
+
+/* quote */
+.hearts {
+  border: 17px solid pink;
+  border-image-source: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/652/hearts-border-image.png);
+  border-image-slice: 20 22;
+  border-image-repeat: round;
+}
+
+
+/* se shpejti */
+.section4 {
+  width: 70%;
+  margin: auto;
+  text-align: center;
+  padding-top: 50px; 
+}
+.div5{
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-between;
+}
+.newdiv-col{
+  flex-basis: 32%;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  position: relative;
+  overflow:hidden;
+}
+.newdiv-col img{
+  width: 80%; 
+}
+.layer{
+background: transparent;
+height:100%;
+width: 100%;
+position: absolute;
+top: 0;
+left:0;
+transition: 0.5s;
+}
+.layer:hover{
+  background: rgba(211, 112, 160, 0.4);
+  ;
+}
+
+
+/* footer section */
+
+#footer {
+  background-image: linear-gradient(to right,#afb8a9,#afb8a9 );
+  color: black;
+  width:100%;
+  height:100%;
+  }
+  
+  .div1_footer{
+  margin-bottom:5px;  
+  display: flex;
+  justify-content: space-between;
+  }
+
+  .div_box
+  {
+  padding: 10px;
+    margin: 20px;
+    line-height: 1.5; 
+  }
+  
+  #div_img{
+    width: 90px;
+    height: 100px;
+  }
+  
+  .hr{
+    margin-top: 10px;
+   
+  }
+  
+  /* per ikona */
+  .div_box .fa {
+    margin-right: 8px;
+    font-size: 25px;
+    height: 50px;
+    width: 40px;
+    text-align: center;
+    padding-top: 7px;
+    border-radius: 2px;
+    background-image: linear-gradient(to right,#afb8a9, #afb8a9);
+  }
+  
+  .div_box .email 
+  {
+    box-shadow: none !important;
+    border: none;
+    border-radius: 0;
+    margin-top: 25px;
+    max-width: 250px;
+    
+  
+  }
+  
+  .div_box .button {
+    box-shadow: none !important;
+    border: none;
+    border-radius: 0;
+    margin-top: 30px;
+    background-image: linear-gradient(to right,#afb8a9,#afb8a9);
+  }
+  
+  hr
+  {
+    background-color:#afb8a9;;
+     
+  }
+  
+  .copyright
+  {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding-bottom:20px;
+    text-align: center;
+    background-color: #777b7e;
+  
+  }
+  
+  #fieldset_id{
+    border: 3px solid #f8f9fa;;
+    width: 260px;
+    height: 157px;
+  }
+  
+  .email{
+    width: 257px;
+    padding: 8px 13px;
+    margin: 4px 0;
+  
+  }
+  
+  .button{
+    background-color:beige;
+    border: none;
+    color: white;
+    padding: 8px 11px;
+    text-decoration: none;
+    margin: 4px 4px;
+    cursor: pointer;
+  }
+  
+  /* datalist emailat */
+.email1{
+  
+    width: 200px;
+    padding: 8px 13px;
+    margin: 4px 0;
+  }
+
+
+
+
+
+
+
+
+
+
+   
+
+  
+   
