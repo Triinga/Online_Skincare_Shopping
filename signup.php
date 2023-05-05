@@ -24,7 +24,7 @@ if(isset($_POST['submit'])){
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://app.enzuzo.com/apps/enzuzo/static/js/__enzuzo-cookiebar.js?uuid=f4accd94-e6da-11ed-8b76-c317f674c707"></script>
     <link rel="stylesheet" href="login.css">
-    <link rel="stylesheet" href="signup.html">
+    <link rel="stylesheet" href="signup.php">
 
     <title>Skin care</title>
   </head>
