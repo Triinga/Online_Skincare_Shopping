@@ -1,3 +1,19 @@
+<?php
+
+include 'config.php';
+
+if(isset($_POST['submit'])){
+    $name = mysqli_real_escape_string($conn, $_POST['name']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
+    $cpass = mysqli_real_escape_string($conn, md5($_POST['cpassword']));
+    
+
+
+}
+
+?>
+
 <!Doctype html>
 <html lang="en">
   <head>
@@ -26,16 +42,18 @@
                     <form method="post" action="signup.php" novalidate>
                             <div class="form-row">
                                 <div class="col-lg-7">
-                                    <input type="text" placeholder="Username" class="form-control my-3 p-4" id="id1" >
-                                    <input type="text" placeholder="Role" class="form-control my-3 p-4" id="id1" >
-
+                                    <input type="text" placeholder="Username" class="form-control my-3 p-4" id="id1" name = "name" >
                                     <input type="email" placeholder="Email address" name="email" class="form-control my-3 p-4" id="id1">
-
                                     <input type="password" placeholder="Password" name="password" class="form-control my-3 p-4" id="id1">
-                                    <input type="password" placeholder="Confirm Password" name="password" class="form-control my-3 p-4" id="id1">
+                                    <input type="password" placeholder="Confirm Password" name="cpassword" class="form-control my-3 p-4" id="id1">
+                                    <select name="user_type" class="form-control" id = id1>
+                                        <option value="User">User</option>
+                                        <option value="Admin">Admin</option>
+                                    </select>
+                                    <input type = "file" class = "box" accept="image/jpg, image/jpeg, imgae/png">
                                 </div>
                             </div>
-                            <input type="submit" value="Submit" class="submit-btn my-3 px-4">
+                            <input type="submit" value="Submit" class="submit-btn my-3 px-4" name="submit">
                     </form> 
                 </div>
             </div>
