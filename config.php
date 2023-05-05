@@ -1,5 +1,5 @@
 <?php
 
-$conn = mysqli_connect('localhost:3307', 'root', '12345678') 
+$conn = mysqli_connect('localhost:3307', 'root', '','user_db') 
 or die("Connection failed");
 ?>
