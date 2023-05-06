@@ -1,5 +1,5 @@
 <?php
-define ("DB_SERVER", "192.168.0.1");
+define ("DB_SERVER", "192.168.0.136");
 define ("DB_USERNAME" , "user");
 define ("DB_PASSWORD" , "PASS");
 define ("DB_DATABASE" , "SkinCareDB");
