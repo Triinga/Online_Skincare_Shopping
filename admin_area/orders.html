@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin Skin Care - Orders</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="orders.css">
+</head>
+<body>
+	<header>
+		<h1>Admin Skin Care</h1>
+		<div>
+			<button onclick="window.location.href='dashboard.html'">Dashboard</button>
+			<button onclick="window.location.href='productsAdmin.html'">Products</button>
+			<button onclick="window.location.href='ordersAdmin.html'" class="active">Orders</button>
+			<button onclick="window.location.href='customersAdmin.html'">Customers</button>
+			<button onclick="window.location.href='settingsAdmin.html'">Settings</button>
+		</div>
+	</header>
+	<main>
+		<div class="container">
+			<h2>Orders</h2>
+			<div class="table-responsive">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Customer Name</th>
+							<th>Product Name</th>
+							<th>Quantity</th>
+							<th>Price</th>
+							<th>Total</th>
+							<th>Status</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>John Smith</td>
+							<td>Anti-Aging Cream</td>
+							<td>2</td>
+							<td>$30.00</td>
+							<td>$60.00</td>
+							<td><select>
+									<option value="pending">Pending</option>
+									<option value="processing" selected>Processing</option>
+									<option value="shipped">Shipped</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>Jane Doe</td>
+							<td>Acne Cleanser</td>
+							<td>1</td>
+							<td>$15.00</td>
+							<td>$15.00</td>
+							<td><select>
+									<option value="pending">Pending</option>
+									<option value="processing">Processing</option>
+									<option value="shipped" selected>Shipped</option>
+								</select>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</main>
+</body>
+</html>

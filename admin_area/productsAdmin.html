@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin Skin Care - Products</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="productsAdmin.css">
+</head>
+<body>
+	<header>
+		<h1>Admin Skin Care</h1>
+		<div>
+			<button onclick="window.location.href='dashboard.html'">Dashboard</button>
+			<button>Products</button>
+			<button onclick="window.location.href='orders.html'">Orders</button>
+			<button>Customers</button>
+			<button>Settings</button>
+		</div>
+	</header>
+	<main>
+        <h2>Products</h2>
+        <table class="product-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th>Stock</th>
+              <th>Image</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Product 1</td>
+              <td>Description of product 1</td>
+              <td>$20.00</td>
+              <td>10</td>
+              <td><img src="product1.jpg" alt="Product 1"></td>
+              <td class="actions">
+                <button>Edit</button>
+                <button>Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Product 2</td>
+              <td>Description of product 2</td>
+              <td>$25.00</td>
+              <td>5</td>
+              <td><img src="product2.jpg" alt="Product 2"></td>
+              <td class="actions">
+                <button>Edit</button>
+                <button>Delete</button>
+              </td>
+            </tr>
+            <!-- shtoni më shumë produkte këtu -->
+          </tbody>
+        </table>
+        <button>Add Product</button>
+      </main>
+      
+	<footer>
+		<p>Copyright © 2023 
+			<a href="https://www.example.com/">Skin Care</a>
+		</p>
+	</footer>
+</body>
+</html>

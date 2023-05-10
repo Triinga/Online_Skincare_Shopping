@@ -1,0 +1,37 @@
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #afb8a9;
+    padding: 1rem;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+button {
+    background-color: rgb(176, 119, 128);
+    border: none;
+    color: #f4f0f0;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    margin-right: 1rem;
+}
+
+@media (max-width: 767px) {
+    button {
+        font-size: 1rem;
+        padding: 0.3rem 0.7rem;
+        margin-right: 0.5rem;
+    }
+}
