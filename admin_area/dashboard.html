@@ -5,92 +5,14 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-	<style>
-		body {
-			background-color: #f8f9fa;
-			font-family: Arial, sans-serif;
-			font-size: 1rem;
-			line-height: 1.5;
-			margin: 0;
-			padding: 0;
-		}
-
-		header {
-			background-color: #afb8a9;
-			padding: 1rem;
-			text-align: center;
-		}
-
-		h1 {
-			margin: 0;
-			font-size: 2.5rem;
-			color: #fff;
-		}
-
-		button {
-			background-color: pink;
-			border: none;
-			color: #fff;
-			font-size: 1.2rem;
-			padding: 0.5rem 1rem;
-			margin-right: 1rem;
-		}
-
-		@media (max-width: 767px) {
-			button {
-				font-size: 1rem;
-				padding: 0.3rem 0.7rem;
-				margin-right: 0.5rem;
-			}
-		}
-
-		.dashboard-container {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-			margin-top: 3rem;
-			padding: 2rem;
-			background-color: #fff;
-			border-radius: 5px;
-			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-		}
-
-		.dashboard-item {
-			width: 300px;
-			height: 200px;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			margin: 1rem;
-			padding: 1rem;
-			background-color: #e8e8e8;
-			border-radius: 5px;
-		}
-
-		.dashboard-item h2 {
-			margin: 0;
-			font-size: 2rem;
-			color: #333;
-			text-align: center;
-			margin-bottom: 1rem;
-		}
-
-		.dashboard-item p {
-			margin: 0;
-			font-size: 1.5rem;
-			color: #666;
-			text-align: center;
-			margin-bottom: 1rem;
-		}
-	</style>
+	<link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
 	<header>
 		<h1>Admin Skin Care</h1>
 		<div>
-			<button>Dashboard</button>
-			<button>Products</button>
+			<button >Dashboard</button>
+			<button onclick="window.location.href='productsAdmin.html'">Products</button>
 			<button>Orders</button>
 			<button>Customers</button>
 			<button>Settings</button>

@@ -1,0 +1,144 @@
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #afb8a9;
+    padding: 1rem;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+button {
+    background-color: pink;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    margin-right: 1rem;
+}
+
+@media (max-width: 767px) {
+    button {
+        font-size: 1rem;
+        padding: 0.3rem 0.7rem;
+        margin-right: 0.5rem;
+    }
+}
+
+.dashboard-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: #e8e8e8; /* changed from #fff */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-item {
+    width: 300px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #afb8a9; /* changed from #e8e8e8 */
+    border-radius: 5px;
+}
+
+.dashboard-item h2 {
+    margin: 0;
+    font-size: 2rem;
+    color: #fff; /* changed from #333 */
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.dashboard-item p {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #fff; /* changed from #666 */
+    text-align: center;
+    margin-bottom: 1rem;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+  }
+  
+  table th,
+  table td {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+  }
+  
+  table th {
+    background-color: #f8f9fa;
+    font-size: 1.2rem;
+  }
+  
+  table td {
+    font-size: 1.1rem;
+  }
+  
+  table td:first-child {
+    font-weight: bold;
+  }
+  
+  table td:nth-child(3) {
+    text-transform: capitalize;
+  }
+  
+  table td:nth-child(4),
+  table td:nth-child(5),
+  table td:nth-child(6),
+  table td:nth-child(7),
+  table td:last-child {
+    font-weight: bold;
+  }
+  
+  /* Pagination styles */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+  
+  .pagination button {
+    background-color: pink;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 0.3rem 0.5rem;
+    margin-right: 0.5rem;
+  }
+  
+  .pagination button:hover {
+    background-color: #dc3545;
+  }
+  
+  .pagination button.disabled {
+    background-color: #e9ecef;
+    color: #6c757d;
+    cursor: not-allowed;
+  }
+  
+  .pagination .active {
+    background-color: #dc3545;
+    font-weight: bold;
+  }
