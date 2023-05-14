@@ -1,0 +1,59 @@
+body {
+  background-color: #f7d7d7;
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+h1 {
+  color: #ff6b6b;
+  text-align: center;
+  margin-top: 0;
+}
+
+.ask {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.ask h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin: 0 auto; /* Add this line */
+  display: block; /* Add this line */
+}
+
+
+input[type="submit"]:hover {
+  background-color: #ff4f4f;
+}
