@@ -1,8 +1,34 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Pearl Skin FAQ</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="style1.css">
+	
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$('.faq .answer').hide(); // Fshih pergjigjet fillestare
+
+		$('.faq .question').click(function() {
+			var answer = $(this).next('.answer');
+			answer.slideToggle(); // Shfaq/fshi pergjigjen kur klikohet mbi pyetjen
+
+			// Fshij pergjigjet e tjera
+			$('.faq .answer').not(answer).slideUp();
+
+			return false; // Parandalo sjelljen e parazgjedhur dhe përhapjen e ngjarjes së klikimit
+		});
+
+		$('.faq .answer').click(function(event) {
+			event.stopPropagation(); // Parandalo përhapjen e ngjarjes kur klikohet mbi pergjigjen
+		});
+	});
+</script>
+
+
+
 </head>
 <body>
 	<div class="container">
@@ -49,18 +75,42 @@
 				echo '<div class="answer">' . $item['answer'] . '</div>';
 				echo '</div>';
 			}
-		?>
+
+			
+if(isset($_POST['submit'])){
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $city = $_POST['city'];
+    $ask = $_POST['ask'];
+
+    $host = 'localhost';
+    $user = 'root';
+    $pass = '';
+    $dbname = 'ueb_projekt';
+
+    $conn = mysqli_connect($host, $user, $pass, $dbname);
+    if (!$conn) {
+        die("Lidhja me bazën e të dhënave dështoi: " . mysqli_connect_error());
+    }
+
+    $sql = "INSERT INTO pytjet (name, email, city, ask) VALUES ('$name', '$email', '$city', '$ask')";
+
+    mysqli_query($conn,$sql);
+}
+?>
 
 <div class="ask">
-  <h2>Ask me a question</h2>
-  <form action="#" method="post">
-    <input type="text" name="name" placeholder="Name">
-    <input type="email" name="email" placeholder="Email">
-    <textarea name="question" placeholder="Your question"></textarea>
-    <button type="submit">Ask</button>
-  </form>
+  <h2>Ask your Question</h2>
 </div>
-	
+
+<form action="#" method="POST">
+    <input type="text" name="name" placeholder="Emri"><br>
+    <input type="email" name="email" placeholder="Email"><br>
+    <input type="text" name="city" placeholder="Qyteti"><br>
+    <input type="text" name="ask" placeholder="Pyetje"><br>
+    <input type="submit" name="submit" value="Dërgo">
+</form>
+
 
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="script.js"></script>
