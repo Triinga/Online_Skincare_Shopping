@@ -1,118 +1,117 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Pearl Skin FAQ</title>
-	<link rel="stylesheet" type="text/css" href="style1.css">
-	
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-	$(document).ready(function() {
-		$('.faq .answer').hide(); // Fshih pergjigjet fillestare
-
-		$('.faq .question').click(function() {
-			var answer = $(this).next('.answer');
-			answer.slideToggle(); // Shfaq/fshi pergjigjen kur klikohet mbi pyetjen
-
-			// Fshij pergjigjet e tjera
-			$('.faq .answer').not(answer).slideUp();
-
-			return false; // Parandalo sjelljen e parazgjedhur dhe përhapjen e ngjarjes së klikimit
+	<link rel="stylesheet" type="text/css" href="faq-style.css">
+	<style>
+		.intro-text {
+			white-space: nowrap;
+			overflow: hidden;
+		}
+	</style>
+	<script>
+		window.addEventListener('DOMContentLoaded', function() {
+			var introText = document.querySelector('.intro-text');
+			var textWidth = introText.offsetWidth;
+			var containerWidth = introText.parentNode.offsetWidth;
+			var duration = textWidth / containerWidth * 10;
+			introText.style.animationDuration = duration + 's';
 		});
-
-		$('.faq .answer').click(function(event) {
-			event.stopPropagation(); // Parandalo përhapjen e ngjarjes kur klikohet mbi pergjigjen
-		});
-	});
-</script>
-
-
-
+	</script>
 </head>
 <body>
 	<div class="container">
 		<h1>Pearl Skin FAQ</h1>
+		<p class="intro-text">These are some of the most frequently asked questions from our customers:</p>
+
 		<?php
-			$faq = array(
-                array(
-					'question' => 'What is a Pearl Skin?',
-					'answer' => 'Pearl Skin is a beauty and skincare brand that offers a range of products designed to help you achieve healthy, glowing skin.'
-				),
-				array(
-					'question' => 'What are the benefits of using Pearl Skin products?',
-					'answer' => 'Our products are made with natural ingredients and are designed to nourish and rejuvenate your skin. They are free from harsh chemicals and synthetic fragrances, making them safe for all skin types.'
-				),
-				array(
-					'question' => 'How do I use Pearl Skin products?',
-					'answer' => 'Instructions for use are provided on the product packaging. Please read the instructions carefully before using our products.'
-				),
-                array(
-					'question' => 'Are your products natural?',
-					'answer' => 'Yes, all of our products are made with natural and organic ingredients and are free from harmful chemicals.'
-				),
-				array(
-					'question' => 'Are your products tested on animals?',
-					'answer' => 'No, we do not test our products on animals. We are committed to using only cruelty-free ingredients and manufacturing processes.'
-				),
-				array(
-					'question' => 'Can I use Pearl Skin products if I have sensitive skin?',
-					'answer' => 'Yes, our products are formulated to be gentle and safe for all skin types, including sensitive skin.'
-				),
-				array(
-					'question' => 'Do you offer international shipping?',
-					'answer' => 'Yes, we offer international shipping to most countries. Please check our shipping policy for more information.'
-                ),
-                array(
-					'question' => 'Do you offer free shipping?',
-					'answer' => 'Yes, we offer free shipping on all orders over $50.'
-				)
-			);
-
-			foreach ($faq as $item) {
-				echo '<div class="faq">';
-				echo '<div class="question">' . $item['question'] . '</div>';
-				echo '<div class="answer">' . $item['answer'] . '</div>';
-				echo '</div>';
-			}
-
+		$faq = array(
+			array(
+				'question' => 'What is Pearl Skin?',
+				'answer' => 'Pearl Skin is a beauty and skincare brand that offers a range of products designed to help you achieve healthy, glowing skin.',
+			),
+			array(
+				'question' => 'What are the benefits of using Pearl Skin products?',
+				'answer' => 'Our products are made with natural ingredients and are designed to nourish and rejuvenate your skin. They provide various benefits such as moisturizing, brightening, and improving skin texture.',
+			),
+			array(
+				'question' => 'Are Pearl Skin products suitable for all skin types?',
+				'answer' => 'Yes, Pearl Skin products are formulated to be suitable for all skin types, including sensitive skin. We take pride in creating products that are gentle and effective, catering to the diverse needs of our customers.',
+			),
+			array(
+				'question' => 'Are Pearl Skin products tested on animals?',
+				'answer' => 'No, we do not test our products on animals. We are committed to using cruelty-free ingredients and manufacturing processes. Our brand values animal welfare and ensures that our products are ethically produced.',
+			),
+			array(
+				'question' => 'How do I use Pearl Skin products?',
+				'answer' => 'Instructions for using Pearl Skin products are provided on the packaging. We recommend following the directions specific to each product to achieve optimal results. If you have any specific concerns or questions about product usage, feel free to reach out to our customer support team.',
+			),
+			array(
+				'question' => 'Where can I purchase Pearl Skin products?',
+				'answer' => 'Pearl Skin products can be purchased through our official website. We offer a convenient online shopping experience, allowing you to explore our product range and place orders easily.',
+			),
+			array(
+				'question' => 'How do I use Pearl Skin products?',
+				'answer' => 'Instructions for using Pearl Skin products are provided on the packaging. We recommend following the directions specific to each product to achieve optimal results. If you have any specific concerns or questions about product usage, feel free to reach out to our customer support team.',
+			),
+			array(
+				'question' => 'Are Pearl Skin products made with natural ingredients?',
+				'answer' => 'Yes, Pearl Skin products are formulated with a focus on using natural and organic ingredients. We believe in harnessing the power of nature to provide effective skincare solutions while minimizing the use of synthetic or harmful chemicals.',
+			),
 			
-if(isset($_POST['submit'])){
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $city = $_POST['city'];
-    $ask = $_POST['ask'];
+			// Add more FAQ items here
+		);
 
-    $host = 'localhost';
-    $user = 'root';
-    $pass = '';
-    $dbname = 'ueb_projekt';
-
-    $conn = mysqli_connect($host, $user, $pass, $dbname);
-    if (!$conn) {
-        die("Lidhja me bazën e të dhënave dështoi: " . mysqli_connect_error());
-    }
-
-    $sql = "INSERT INTO pytjet (name, email, city, ask) VALUES ('$name', '$email', '$city', '$ask')";
-
-    mysqli_query($conn,$sql);
-}
-?>
-
-<div class="ask">
-  <h2>Ask your Question</h2>
+		foreach ($faq as $item) {
+			echo '<div class="faq">';
+			echo '<div class="question">';
+			echo '<h3>' . $item['question'] . '</h3>';
+			echo '</div>';
+			echo '<div class="answer">';
+			echo '<p>' . $item['answer'] . '</p>';
+			echo '</div>';
+			echo '</div>';
+		}
+		if(isset($_POST['submit'])){
+			$name = $_POST['name'];
+			$email = $_POST['email'];
+			$city = $_POST['city'];
+			$ask = $_POST['ask'];
+		
+			$host = 'localhost';
+			$user = 'root';
+			$pass = '';
+			$dbname = 'ueb_projekt';
+		
+			$conn = mysqli_connect($host, $user, $pass, $dbname);
+			if (!$conn) {
+				die("Lidhja me bazën e të dhënave dështoi: " . mysqli_connect_error());
+			}
+		
+			$sql = "INSERT INTO pytjet (name, email, city, ask) VALUES ('$name', '$email', '$city', '$ask')";
+		
+			mysqli_query($conn,$sql);
+		}
+		?>
+		
+		
+		
+		<div class="ask">
+	<h2>Ask your Question</h2>
+	<form action="#" method="POST">
+		<input type="text" name="name" placeholder="Emri" required>
+		<input type="email" name="email" placeholder="Email" required>
+		<input type="text" name="city" placeholder="Qyteti" required>
+		<textarea name="ask" placeholder="Pyetje" required></textarea>
+		<input type="submit" name="submit" value="Dërgo">
+	</form>
 </div>
 
-<form action="#" method="POST">
-    <input type="text" name="name" placeholder="Emri"><br>
-    <input type="email" name="email" placeholder="Email"><br>
-    <input type="text" name="city" placeholder="Qyteti"><br>
-    <input type="text" name="ask" placeholder="Pyetje"><br>
-    <input type="submit" name="submit" value="Dërgo">
-</form>
+		
 
+	</div>
 
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script src="script.js"></script>
+	<script src="faq-script.js"></script>
 </body>
 </html>
