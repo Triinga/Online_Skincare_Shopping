@@ -44,18 +44,22 @@ body {
 		.ask {
 			text-align: center;
 			margin-bottom: 20px;
+			background-color: #f2f2f2;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 		}
-
+		
 		.ask h2 {
 			font-size: 24px;
 			margin-bottom: 10px;
 		}
-
+		
 		form {
 			max-width: 400px;
 			margin: 0 auto;
 		}
-
+		
 		input[type="text"],
 		input[type="email"],
 		textarea {
@@ -66,8 +70,22 @@ body {
 			border: 1px solid #ccc;
 			border-radius: 4px;
 			box-sizing: border-box;
+			transition: background-color 0.3s ease;
 		}
-
+		
+		input[type="text"]:hover,
+		input[type="email"]:hover,
+		textarea:hover {
+			background-color: #f9f9f9;
+		}
+		
+		input[type="text"]:focus,
+		input[type="email"]:focus,
+		textarea:focus {
+			background-color: #f9f9f9;
+			box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+		}
+		
 		input[type="submit"] {
 			background-color: #555;
 			color: #fff;
@@ -75,9 +93,16 @@ body {
 			padding: 10px 20px;
 			cursor: pointer;
 		}
-
+		
 		input[type="submit"]:hover {
 			background-color: #333;
 		}
-
+		
+		.intro-text {
+			white-space: nowrap;
+			overflow: hidden;
+			animation: marquee 10s linear infinite;
+			text-shadow: #333;
+			text-align: center;
+		}
 		
