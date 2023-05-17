@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="google-signin-client_id"content="862629191035-teis8p0vakrevpbieii23mq4nqs0rbvr.apps.googleusercontent.com">
     <link rel="shortcut icon" type="image/x-icon" href="logo3.png"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="login.css">
-    <link rel="stylesheet" href="signup.html">
     <script src="https://app.enzuzo.com/apps/enzuzo/static/js/__enzuzo-cookiebar.js?uuid=f4accd94-e6da-11ed-8b76-c317f674c707"></script>
-
+    <script src="https://apis.google.com/js/platform.js"async defer></script>
     <title>Skin care</title>
   </head>
   <body>
@@ -41,6 +41,9 @@
                         <div class="form-row">
                             <div class="col-lg-7">
                                <button type="submit" class="btn1 mt-3 mb-5">Login</button>
+                               <div class="g-signin2" data-onsuccess="onSignIn">
+                               </div>
+                               <div id="content"></div>
                             </div>
                         </div>
                         <label class="remember-me"><input type="checkbox">Remember me</label>
@@ -89,7 +92,23 @@
         </div>
      </section>
     <!-- </form>      -->
-     <script src="Login.js"></script>
+    <script>    
+    function onSignIn(googleUser){
+        var profile = googleUser.getBasicProfile();
+        console.log('User is ' +JSON.stringify(profile));
+        var element= document.querySelector('#content');
+        element.innerText= profile.getName();
+        var image = document.create_Element('img')
+        image.setAttribute('src',googleUser.getImageUrl());
+        element.apped(image);
+
+        function signOut(){
+            gapi.auth2.getAuthInstance().signOut().then(function(){
+              console.log('user sign out')  
+            })
+        }
+    }
+    </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" 
