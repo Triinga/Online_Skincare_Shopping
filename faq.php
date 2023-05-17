@@ -2,13 +2,15 @@
 <html>
 <head>
 	<title>Pearl Skin FAQ</title>
-	<link rel="stylesheet" type="text/css" href="faq-style.css">
+	<link rel="stylesheet" type="text/css" href="faq-style1.css">
+	
 	<style>
 		.intro-text {
 			white-space: nowrap;
 			overflow: hidden;
 		}
 	</style>
+	
 	<script>
 		window.addEventListener('DOMContentLoaded', function() {
 			var introText = document.querySelector('.intro-text');
@@ -95,17 +97,28 @@
 		?>
 		
 		
-		
 		<div class="ask">
-	<h2>Ask your Question</h2>
+	<h2>Ask your Question?</h2>
 	<form action="#" method="POST">
-		<input type="text" name="name" placeholder="Emri" required>
+		<input type="text" name="name" placeholder="Name" required>
 		<input type="email" name="email" placeholder="Email" required>
-		<input type="text" name="city" placeholder="Qyteti" required>
-		<textarea name="ask" placeholder="Pyetje" required></textarea>
-		<input type="submit" name="submit" value="Dërgo">
+		<input type="text" name="city" placeholder="City" required>
+		<textarea name="ask" placeholder="Question..." required></textarea>
+		<input type="submit" name="submit" value="Send">
 	</form>
 </div>
+
+<?php
+if(isset($_POST['submit'])){
+	$name = $_POST['name'];
+	$email = $_POST['email'];
+	$city = $_POST['city'];
+	$ask = $_POST['ask'];
+
+	
+}
+?>
+
 
 		
 
