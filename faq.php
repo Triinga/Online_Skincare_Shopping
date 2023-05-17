@@ -95,6 +95,7 @@
 			mysqli_query($conn,$sql);
 		}
 		?>
+		<p class="intro-text">So if you are interested more you can ask us below!</p>
 		
 		
 		<div class="ask">
