@@ -6,7 +6,7 @@
     include('../includes/connect.php');
 
     $get_payments="SELECT * FROM `user_table`";
-    $result=mysqli_query($con2, $get_payments);
+    $result=mysqli_query($con, $get_payments);
     $row_count=mysqli_num_rows($result);
         
         if($row_count==0){
@@ -30,7 +30,7 @@
                 $username=$row_data['username'];
                 $user_email=$row_data['email'];
                 $user_image=$row_data['image'];
-                $user_address=$row_data['user_address'];
+                // $user_address=$row_data['user_address'];
                 $number++;
                 echo " 
                 <tr>
@@ -38,8 +38,7 @@
                 <td class=''>$username</td>
                 <td>$user_email</td>
                 <td><img src='../users_area/user_images/$user_image' alt='$username' class='product_img'</td>
-                <td>$payment_mode</td>
-                <td>$user_address</td>
+              
                 <td>$user_email</td>
                 <td><a href='' class='text-light'><i class='fas fa-trash'></i></a></td>
                 </tr>";

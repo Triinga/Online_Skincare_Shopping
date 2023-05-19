@@ -1,0 +1,75 @@
+<?php
+if(isset($_GET['edit_account'])){
+    $user_session_name = $_SESSION['username'];
+    $select_query = "Select * from user_table where username = '$user_session_name'";
+    $result_query = mysqli_query($con, $select_query);
+    $row_fetch = mysqli_fetch_array($result_query); 
+    $user_id = $row_fetch['user_id'];
+    $user_name = $row_fetch['username']; //nga databaza
+    $user_email = $row_fetch['email'];
+     // $user_password = $row_fetch['password'];
+}
+
+    if(isset($_POST['user_update'])){
+        $update_id = $user_id;
+        $user_name = $_POST['user_username'];
+        // $user_password = $row_fetch['password'];
+        $user_email = $_POST['user_email']; //nga forma mirren
+        $user_image = $_FILES['user_image']['name'];
+        $user_image_tmp = $_FILES['user_image']['tmp_name'];
+        move_uploaded_file($user_image_tmp, "../fotot/$user_image");
+
+        //update query
+        $update_data = "Update user_table set username ='$user_name', email = '$user_email', image = '$user_image' where user_id = $update_id";
+        $result_query_update = mysqli_query($con, $update_data);
+        if($result_query_update){
+            echo "<script>alert('Data updated succesfully')</script>";
+            echo "<script>window.open('../logout.php', '_self')</script>";
+        }
+
+    }
+
+
+
+
+
+?>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Edit account</title>
+        <style>
+.edit_image{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+        </style>
+    </head>
+    <body>
+
+    <h3 class = "text-center text-success mb-4 mt-5 ">Edit account</h3>
+    <form action="" method="post" enctype="multipart/form-data" class="text-center">
+        <div class="form-outline mb-4">
+            <input type="text" class= "form-control w-50 m-auto" value="<?php echo $user_name?>" name="user_username">
+        </div>
+        <!-- <div class="form-outline mb-4">
+            <input type="text" class= "form-control w-50 m-auto" value=" name="user_password">
+        </div> -->
+        <div class="form-outline mb-4">
+            <input type="email" class= "form-control w-50 m-auto" value="<?php echo $user_email?>" name="user_email">
+        </div>
+        <div class="form-outline mb-4">
+            <input type="submit" class= "form-control w-50 m-auto bg-info py-2 px-3 border-0" value="Change password">
+        </div>
+        <div class="form-outline mb-4 d-flex w-50 m-auto">
+            <input type="file" class= "form-control m-auto" name="user_image">
+            <img src="../fotot/<?php echo $user_image ?>" alt="" class ="edit_image">
+        </div>
+        <input type="submit" value="Update" name = "user_update" class = "bg-info py-2 px-3 border-0">
+
+    </form>
+
+</body>
+</html>

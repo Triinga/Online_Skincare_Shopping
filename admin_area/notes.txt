@@ -1,0 +1,6 @@
+using ip adressecalhoss we are going to identify the user and also using that ip address we are going to fetch 
+their information, if they have a pending order or whatever it is we are going to fetch that data 
+since i am working on my localhost all my users will have the same ip address for all users 
+
+
+  

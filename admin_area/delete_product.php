@@ -1,16 +1,18 @@
+
 <?php
 
-if(isset($_GET['delete_brands'])){
-    $delete_brands = $_GET['delete_brands'];
-    // echo $delete_category; 
+if(isset($_GET['delete_product'])){
+    $delete_id = $_GET['delete_product'];
+    echo $delete_id; 
     // delete query
 
-    $delete_query = "DELETE FROM `brands` WHERE brand_id = $delete_brands";
-    $result = mysqli_query($con, $delete_query);
-    if($result){
-        echo "<script>alert('Brands deleted successfully')</script>";
-        echo "<script>window.open('./index.php?view_brands', '_self')</script>";
+    $delete_product = "DELETE FROM `products` WHERE product_id = $delete_id";
+    $result_product = mysqli_query($con, $delete_product);
+    if($result_product){
+        echo "<script>alert('Product deleted successfully')</script>";
+        echo "<script>window.open('./index.php', '_self')</script>";
     }
 }
 
 ?>
+<!-- DELETE WORKING  -->

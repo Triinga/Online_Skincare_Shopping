@@ -7,6 +7,8 @@ include('../functions/common_functions.php');
 
 <html>
 <head>
+<link rel="stylesheet" href="header.css">
+	<link rel="stylesheet" href="header.html">
     <link rel="stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"  >
     <link rel="stylesheet" href = "style.css">
     <link rel="stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"  >
@@ -25,7 +27,10 @@ include('../functions/common_functions.php');
 
     </style>
 </head>
-
+<!-- calling card function -->
+<?php
+    card(); 
+?>
 
     <body>
 <nav class ="navbar navbar-expand-lg navbar-dark bg-secondary">
@@ -48,10 +53,7 @@ include('../functions/common_functions.php');
 </ul>
 </nav>
 
-<!-- calling card function -->
-<?php
-    card(); 
-?>
+
 <!-- third child --> 
 <div class="bg-light"></div>
  <h3 class="text-center">Hidden Store</h3>
@@ -173,7 +175,7 @@ include('../functions/common_functions.php');
                     name='continue_shopping'> " ;                   
                 }
                 if(isset($_POST['continue_shopping'])){
-                    echo "<script>window.open('project.php','_self')</script>";
+                    echo "<script>window.open('products.php','_self')</script>";
                 }
 
             ?>
