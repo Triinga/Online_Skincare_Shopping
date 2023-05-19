@@ -3,6 +3,14 @@
 include('../includes/connect.php'); //dont use dots cause folders are in the same level
 include('../functions/common_functions.php');
 session_start();
+
+// Fetch products based on selected filters
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_type'])) {
+    $productType = $_POST['product_type'];
+    $filteredProducts = getProductsByType($productType); // Modify this function to fetch products based on the selected type
+    renderProducts($filteredProducts); // Modify this function to render the filtered products
+    exit(); // End the script execution after sending the response
+}
 ?>
 
 
@@ -164,7 +172,34 @@ $productPref = $userPref->getPreference();
             </form>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        // Submit the form via AJAX when the button is clicked
+        $('#filterForm').submit(function(event) {
+            event.preventDefault(); // Prevent the default form submission
 
+            // Get the selected product type
+            var productType = $('#product_type').val();
+
+            // Send the AJAX request
+            $.ajax({
+                url: 'products.php', // Replace with the path to your PHP file
+                type: 'POST',
+                data: { product_type: productType }, // Send the selected product type as data
+
+                success: function(response) {
+                    // Update the product list with the filtered products
+                    $('#products').html(response);
+                },
+                error: function(xhr, status, error) {
+                    // Handle the error, if any
+                    console.log(error);
+                }
+            });
+        });
+    });
+    </script>
   
 </body>
 </html>
