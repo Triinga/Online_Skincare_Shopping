@@ -5,7 +5,7 @@
     <?php 
     include('../includes/connect.php');
     $get_orders="SELECT * FROM `user_orders`";
-    $result=mysqli_query($con2, $get_orders);
+    $result=mysqli_query($con, $get_orders);
     $row_count=mysqli_num_rows($result);
         
         if($row_count==0){

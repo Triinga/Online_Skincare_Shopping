@@ -1,44 +1,66 @@
 <?php
 
 include('../includes/connect.php');
+include('../functions/common_functions.php');
 
 if(isset($_POST['submit'])){
-    $username = $_POST['name'];
+    $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $hash_password = password_hash($password, PASSWORD_DEFAULT);
     $cpassword = $_POST['cpassword'];
+    $user_ip = getIPAddress();
     $role = $_POST['user_type'];
     $image = $_FILES['user_image']['name'];
     $image_tmp_name = $_FILES['user_image']['tmp_name'];
 
 //select query
 $select_query = "Select * from user_table where username ='$username' or email = '$email'";
-$result = mysqli_query($con2, $select_query);
+$result = mysqli_query($con, $select_query);
 $row_count = mysqli_num_rows($result);
 if($row_count > 0){
     echo "<script>alert('Username and email already exist') </script>";
-
 }else if($password != $cpassword){
     echo "<script>alert('Passwords do not match') </script>";
 
 }
 else{
     //insert query
-    move_uploaded_file($image_tmp_name, 'uploaded_img/'.$image);
+    move_uploaded_file($image_tmp_name, "/src/uploaded_img/$image"); //error osht tum qit
 
-$insert_query = "insert into user_table (username, email, password, role, image)
-values('$username', '$email', '$hash_password', '$role','$image')";
+$insert_query = "insert into user_table (username, email, password, user_ip, role, image)
+values('$username', '$email', '$hash_password', '$user_ip','$role','$image')";
 
-$sql_execute = mysqli_query($con2, $insert_query);
+$sql_execute = mysqli_query($con, $insert_query);
+
+// if ($sql_execute) {
+//     // User registration successful
+//     if ($role == 'Admin') {
+//         // Redirect to admin dashboard
+//         header("Location: index.php");
+//         exit;
+//     } else {
+//         // Redirect to user dashboard
+//         header("Location: profile.php");
+//         exit;
+//     }
+// } else {
+//     // Error occurred while inserting into the database
+//     echo "An error occurred while registering. Please try again.";
+// }
+
+
 }
 
 
+
+
 // //selecting cart items video 42
-$select_cart_items = "SELECT * FROM card_details WHERE ip_address = '$username'";
-$result_cart = mysqli_query($con, $select_cart_items);
-$row_count = mysqli_num_rows($result_cart);
-if($row_count > 0){
+$select_cart_items = "SELECT * FROM card_details WHERE ip_address = '$user_ip'"; 
+$result_cart = mysqli_query($con, $select_cart_items); //con
+$rows_count = mysqli_num_rows($result_cart);
+if($rows_count > 0){
+    $_SESSION['username'] = $username;
     echo "<script>alert('You have items in your cart') </script>";
     echo "<script>window.open('checkout.php', '_self') </script>";
 }else{
@@ -82,11 +104,11 @@ if($row_count > 0){
                     <form method="post" action="" enctype="multipart/form-data">
                             <div class="form-row">
                                 <div class="col-lg-7">
-                                    <input type="text" placeholder="Username" class="form-control my-3 p-4" id="id1" name = "name" >
+                                    <input type="text" placeholder="Username" class="form-control my-3 p-4" id="id1" name = "username" >
                                     <input type="email" placeholder="Email address" name="email" class="form-control my-3 p-4" id="id1">
                                     <input type="password" placeholder="Password" name="password" class="form-control my-3 p-4" id="id1">
                                     <input type="password" placeholder="Confirm Password" name="cpassword" class="form-control my-3 p-4" id="id1">
-                                    <input type="text" placeholder="Address" class="form-control my-3 p-4" id="user_address" name = "user_address" >
+                                    <!-- <input type="text" placeholder="Address" class="form-control my-3 p-4" id="user_address" name = "user_address" > -->
                                     <select name="user_type" class="form-control" id = id1>
                                         <option value="User">User</option>
                                         <option value="Admin">Admin</option>

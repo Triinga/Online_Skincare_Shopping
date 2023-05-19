@@ -8,40 +8,23 @@ session_start();
 
 <html>
 <head>
+<link rel="stylesheet" href="header.css">
+	<link rel="stylesheet" href="header.html">
     <link rel="stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"  >
     <link rel="stylesheet" href = "style.css">
 </head>
 
     <body>
+
+
+
+<!-- second child -->
+
 <nav class ="navbar navbar-expand-lg navbar-dark bg-secondary">
 <ul class="navbar-nav me-auto">
 <li class="nav-item">
     <a class="nav-link" href="#">Welcome Guest</a>
 </li>
-<!-- <li class="nav-item">
-    <a class="nav-link" href="#">Login</a>
-</li> -->
-
-        <!-- Search bar -->
-        <!-- <form class="d-flex" action="search_product.php" method="get">
-            <input class="form-control me-2" type="search" placeholder="Search" 
-            aria-label="Search" name="search_data">
-        <input type="submit" value="Search" class="btn  btn-outline-light"
-        name="search_data_product">
-        </form>
--->
-    
-<!-- </ul> -->
-
-
-<!-- second child -->
-
-<!-- <nav class ="navbar navbar-expand-lg navbar-dark bg-secondary">
-<ul class="navbar-nav me-auto">
-<li class="nav-item">
-    <a class="nav-link" href="#">Welcome Guest</a>
-</li> -->
-
 <?php
     if(!isset($_SESSION['username'])){
         echo "<li class='nav-item'>
@@ -58,31 +41,6 @@ session_start();
 </nav>
 
 
-<!-- <nav class ="navbar navbar-expand-lg navbar-dark bg-secondary">
-<ul class="navbar-nav me-auto">
-    <?php
-        // if(!isset($_SESSION['username'])){
-        //     echo "   <li class='nav-item'>
-        //     <a class='nav-link' href='#'>Welcome Guest</a>
-        //     </li>"; 
-        // }else{
-        //     echo "<li class='nav-item'>
-        //     <a class='nav-link' href='#'>Welcome ".$_SESSION['username']."</a>
-        //     </li>";
-        // }
-
-        
-        // if(!isset($_SESSION['username'])){
-        //     echo "<li class='nav-item'>
-        //     <a class='nav-link' href='login.php'>Login</a>
-        //     </li>";
-        // }else{
-        //     echo "<li class='nav-item'>
-        //     <a class='nav-link' href='logout.php'>Logout</a>
-        //     </li>";
-        // }
-
-    ?> -->
 
 
 <!-- third child -->

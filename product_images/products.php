@@ -2,6 +2,7 @@
 <?php
 include('../includes/connect.php'); //dont use dots cause folders are in the same level
 include('../functions/common_functions.php');
+session_start();
 ?>
 
 
@@ -9,6 +10,8 @@ include('../functions/common_functions.php');
 <head>
     <link rel="stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"  >
     <link rel="stylesheet" href = "style.css">
+    <link rel="stylesheet" href = "preferencat.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
@@ -17,11 +20,36 @@ include('../functions/common_functions.php');
 </head>
 
     <body>
+        
+<!-- second child -->
 <nav class ="navbar navbar-expand-lg navbar-dark bg-secondary">
 <ul class="navbar-nav me-auto">
-<li class="nav-item">
-    <a class="nav-link" href="#">Welcome Guest</a>
-</li>
+    <?php
+        if(!isset($_SESSION['username'])){
+            echo "   <li class='nav-item'>
+            <a class='nav-link' href='#'>Welcome Guest</a>
+            </li>"; 
+        }else{
+            echo "<li class='nav-item'>
+            <a class='nav-link' href='#'>Welcome ".$_SESSION['username']."</a>
+            </li>";
+        }
+
+        
+        if(!isset($_SESSION['username'])){
+            echo "<li class='nav-item'>
+            <a class='nav-link' href='login.php'>Login</a>
+            </li>";
+        }else{
+            echo "<li class='nav-item'>
+            <a class='nav-link' href='logout.php'>Logout</a>
+            </li>";
+        }
+?>
+</ul>
+</nav>
+
+
         <!-- Search bar -->
         <form class="d-flex" action="search_product.php" method="get">
             <input class="form-control me-2" type="search" placeholder="Search" 
@@ -41,7 +69,7 @@ include('../functions/common_functions.php');
         </li>
     
 </ul>
-</nav>
+
 
 <!-- calling card function -->
 <?php
@@ -99,6 +127,43 @@ include('../functions/common_functions.php');
      
  </div>
 
+ <?php
+// përfshini klasën UserPreferences dhe lidhuni me db
+include_once 'UserPreferences.php';
+$servername = "127.0.0.1:3307";
+$username = "root@localhost";
+$password = "";
+$dbname = "mystore";
+$userId = 1; // vendosni id e përdoruesit aktual
+
+// krijoni një instancë të klasës UserPreferences duke i kaluar id e përdoruesit dhe emrin e cookie-t
+$userPref = new UserPreferences($userId, "user_product_pref", $servername, $username, $password, $dbname);
+
+// kontrollo nese është bërë post me të dhënat e preferencave
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $productType = $_POST['product_type'];
+    // ruaj preferencën e përdoruesit në db
+    $userPref->savePreference($productType);
+}
+
+// merr preferencën e përdoruesit
+$productPref = $userPref->getPreference();
+?>
+      <div class="container">
+        <h1>Zgjidhni preferencat e produktit</h1>
+        <div class="preferences-container">
+            <form method="post">
+                <label for="product_type">Lloji i produktit:</label>
+                <select name="product_type" id="product_type">
+                    <option value="none" <?php if ($productPref === 'none') echo 'selected' ?>>Asnjë</option>
+                    <option value="face" <?php if ($productPref === 'face') echo 'selected' ?>>Kujdesi për fytyrën</option>
+                    <option value="body" <?php if ($productPref === 'body') echo 'selected' ?>>Kujdesi për trupin</option>
+                    <option value="hair" <?php if ($productPref === 'hair') echo 'selected' ?>>Kujdesi për flokët</option>
+                </select>
+                <button class="save-button" type="submit">Ruaj Preferencën</button>
+            </form>
+        </div>
+    </div>
 
   
 </body>

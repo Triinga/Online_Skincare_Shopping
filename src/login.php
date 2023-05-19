@@ -2,54 +2,43 @@
 
 include('../includes/connect.php');
 include('../functions/common_functions.php');
+@session_start();
 
 
 if(isset($_POST['submit'])){
-    $email = $_POST['email'];
+    $username = $_POST['username'];
     $password = $_POST['password'];
     
 
-    $select_query = "Select * from user_table where email = '$email'";
-    $result = mysqli_query($con2, $select_query);
+    $select_query = "Select * from user_table where username = '$username'";
+    $result = mysqli_query($con, $select_query);
     $row_count = mysqli_num_rows($result);
     $row_data = mysqli_fetch_assoc($result);
     $user_ip = getIPAddress();
 
 //Cart item 44video
 $select_query_cart = "Select * from card_details where ip_address = '$user_ip'";
-$select_cart = mysqli_query($con, $select_query_cart);
+$select_cart = mysqli_query($con, $select_query_cart); //con
 $row_count_cart = mysqli_num_rows($select_cart);
     if($row_count > 0){
-        $_SESSION['email'] = $email;
+        $_SESSION['username'] = $username;
         if(password_verify($password, $row_data['password'])){
-            if($row_count == 1 and $row_count_cart == 0){
-                $_SESSION['email'] = $email;
+            if($row_count == 1 and $row_count_cart == 0){ //nese user ka ne cart nje item e qon te payment, video 44
+                $_SESSION['username'] = $username;                
                 echo "<script>alert('Login succesfully!')</script>";
-                echo "<script>window.open('payment.php','_self')</script>";
+                echo "<script>window.open('profile.php','_self')</script>";
             }else{
-                $_SESSION['email'] = $email;
+                $_SESSION['username'] = $username;
                 echo "<script>alert('Login succesfully!')</script>";
                 echo "<script>window.open('profile.php','_self')</script>";
             }
-            echo "<script>window.open('profile.php','_self')</script>";
         }else{
             echo "<script>alert('Invalid Credentials')</script>";
         }
     }else{
-        echo "<script>alert('Invalid Credentials')</script>";
+        echo "<s cript>alert('Invalid Credentials')</script>";
     }
 }
-
-// if(isset($_POST['user-login'])){
-//     $email = $_POST['email'];
-//     $password = $_POST['password'];
-      
-//     $select_query = "Select * from user_table where username = '$username";
-//     $result = mysqli_query($con, $select_query);
-//     $rows_count = mysqli_num_rows($result);
-// }else{
-//     echo "<script>alert('Invalid Credentials')</script>";
-// }
 
 ?>
 
@@ -82,49 +71,30 @@ $row_count_cart = mysqli_num_rows($select_cart);
                     <form class="login_form" method="post" action = "" >
                         <div class="form-row">
                             <div class="col-lg-7"> <!--7 columns-->
-                                <input autocomplete="off" type="email" placeholder="Email" name="email" class="form-control my-3 p-4"
+                                <input type="text" autocomplete="off" placeholder="Username" name="username" class="form-control my-3 p-4"
                                  id="form" required> 
                                 <!--Kur deshirojme te krijojme nje form ne bootstrap duhet te perdorim clasen form-control-->
-                                <!-- <div id="email_error">Please fill up your email</div> -->
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col-lg-7">
                                 <input type="password" placeholder="Password" name="password" class="form-control my-3 p-4" id="form">
-                                <!-- <div id="pass_error">Please fill up your password</div> -->
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col-lg-7">
-                               <button type="submit" class="btn1 mt-3 mb-5" name = "submit">Login</button>
+                               <button type="submit" class="btn1 mt-3 mb-5" name = "submit" name="user_login">Login</button>
                             </div>
                         </div>
                         <label class="remember-me"><input type="checkbox">Remember me</label>
-                        <!-- <a href="#forgot-pw" class="forgot-pw"><i>Forgot password?</i></a> -->
                         <div ><p>Don't have an account? <a href="signup.php" class="register-here"><i>Register here</i></a></p></div>
                     </form> 
-
-                    <!-- <div id="forgot-pw">
-                        <form  class="form" method="post" action = "login.php">
-                            <a href="#" class="close">&times;</a>
-                            <h2>Forgot your password</h2>
-                            <p> Please enter the email address you'd like your <br>password 
-                                reset information sent to.
-                            </p>
-                            <div class="form-row">
-                                <div class="col-lg-7">
-                                    <input type="email" placeholder="Enter email address" name="email" class="form-control my-3 p-4"
-                                     id="email" >
-                                </div>
-                            </div> -->
-                            <!-- <input type="submit" value="submit" class="submit-btn my-3 px-4" name = "submit"> -->
                         </form>
                     </div>
                 </div>
             </div>
         </div>
      </section>
-    <!-- </form>      -->
      <script src="Login.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
