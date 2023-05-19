@@ -1,6 +1,6 @@
 <?php
 
-include 'config.php';
+include ('Connection/config.php');
 
 if(isset($_POST['submit'])){
 
