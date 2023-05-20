@@ -2,6 +2,7 @@
 <?php
     include('../includes/connect.php');  //dont use dots cause folders are in the same level
 include('../functions/common_functions.php');
+session_start();
 ?>
 
 
@@ -33,14 +34,37 @@ include('../functions/common_functions.php');
 ?>
 
     <body>
-<nav class ="navbar navbar-expand-lg navbar-dark bg-secondary">
+
+ 
+    <nav class ="navbar navbar-expand-lg navbar-dark bg-secondary">
 <ul class="navbar-nav me-auto">
-<li class="nav-item">
-    <a class="nav-link" href="#">Welcome Guest</a>
-</li>
-<li class="nav-item">
-    <a class="nav-link" href="#">Welcome Guest</a>
-</li>       
+    <?php
+        if(!isset($_SESSION['username'])){
+            echo "   <li class='nav-item'>
+            <a class='nav-link' href='#'>Welcome Guest</a>
+            </li>"; 
+        }else{
+            echo "<li class='nav-item'>
+            <a class='nav-link' href='#'>Welcome ".$_SESSION['username']."</a>
+            </li>";
+        }
+
+        
+        if(!isset($_SESSION['username'])){
+            echo "<li class='nav-item'>
+            <a class='nav-link' href='login.php'>Login</a>
+            </li>";
+        }else{
+            echo "<li class='nav-item'>
+            <a class='nav-link' href='logout.php'>Logout</a>
+            </li>";
+        }
+?>
+</ul>
+</nav>
+
+
+ <!-- #region -->
         <li class="nav-item">
             <a class="nav-link" href="card.php"><i class="fas fa-shopping-cart"></i><sup>
                 <?php
@@ -197,7 +221,7 @@ include('../functions/common_functions.php');
                     }
                 }
 
-                echo $removeitem=remove_cart_item(); 
+                echo $removeitem= remove_cart_item(); 
             ?>
         </div>
         </div>
