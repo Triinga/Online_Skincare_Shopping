@@ -17,22 +17,17 @@ if(isset($_GET['edit_account'])){
         $user_email = $_POST['user_email']; //nga forma mirren
         $user_image = $_FILES['user_image']['name'];
         $user_image_tmp = $_FILES['user_image']['tmp_name'];
-        move_uploaded_file($user_image_tmp, "../fotot/$user_image");
+        move_uploaded_file($user_image_tmp, "./user_images/$user_image");
 
         //update query
         $update_data = "Update user_table set username ='$user_name', email = '$user_email', image = '$user_image' where user_id = $update_id";
         $result_query_update = mysqli_query($con, $update_data);
         if($result_query_update){
             echo "<script>alert('Data updated succesfully')</script>";
-            echo "<script>window.open('../logout.php', '_self')</script>";
+            echo "<script>window.open('login.php', '_self')</script>";
         }
 
     }
-
-
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -65,7 +60,7 @@ if(isset($_GET['edit_account'])){
         </div>
         <div class="form-outline mb-4 d-flex w-50 m-auto">
             <input type="file" class= "form-control m-auto" name="user_image">
-            <img src="../fotot/<?php echo $user_image ?>" alt="" class ="edit_image">
+            <img src="./user_images/<?php echo $user_image ?>" alt="" class ="edit_image">
         </div>
         <input type="submit" value="Update" name = "user_update" class = "bg-info py-2 px-3 border-0">
 
