@@ -3,74 +3,9 @@
 include('../includes/connect.php');
 include('../functions/common_functions.php');
 
-if(isset($_POST['submit'])){
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $hash_password = password_hash($password, PASSWORD_DEFAULT);
-    $cpassword = $_POST['cpassword'];
-    $user_ip = getIPAddress();
-    $role = $_POST['user_type'];
-    $image = $_FILES['user_image']['name'];
-    $image_tmp_name = $_FILES['user_image']['tmp_name'];
-
-//select query
-$select_query = "Select * from user_table where username ='$username' or email = '$email'";
-$result = mysqli_query($con, $select_query);
-$row_count = mysqli_num_rows($result);
-if($row_count > 0){
-    echo "<script>alert('Username and email already exist') </script>";
-}else if($password != $cpassword){
-    echo "<script>alert('Passwords do not match') </script>";
-
-}
-else{
-    //insert query
-    move_uploaded_file($image_tmp_name, "/src/uploaded_img/$image"); //error osht tum qit
-
-$insert_query = "insert into user_table (username, email, password, user_ip, role, image)
-values('$username', '$email', '$hash_password', '$user_ip','$role','$image')";
-
-$sql_execute = mysqli_query($con, $insert_query);
-
-// if ($sql_execute) {
-//     // User registration successful
-//     if ($role == 'Admin') {
-//         // Redirect to admin dashboard
-//         header("Location: index.php");
-//         exit;
-//     } else {
-//         // Redirect to user dashboard
-//         header("Location: profile.php");
-//         exit;
-//     }
-// } else {
-//     // Error occurred while inserting into the database
-//     echo "An error occurred while registering. Please try again.";
-// }
-
-
-}
-
-
-
-
-// //selecting cart items video 42
-$select_cart_items = "SELECT * FROM card_details WHERE ip_address = '$user_ip'"; 
-$result_cart = mysqli_query($con, $select_cart_items); //con
-$rows_count = mysqli_num_rows($result_cart);
-if($rows_count > 0){
-    $_SESSION['username'] = $username;
-    echo "<script>alert('You have items in your cart') </script>";
-    echo "<script>window.open('checkout.php', '_self') </script>";
-}else{
-    echo "<script>window.open('login.php', '_self') </script>";
-
-}
 
 // $select_cart_items = "Select * from 'cart_details' where"
 
-}
 ?>
 
 
@@ -132,3 +67,76 @@ if($rows_count > 0){
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>
+
+<?php 
+
+
+if(isset($_POST['submit'])){
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $hash_password = password_hash($password, PASSWORD_DEFAULT);
+    $cpassword = $_POST['cpassword'];
+    $role = $_POST['user_type'];
+    $image = $_FILES['user_image']['name'];
+    $image_tmp_name = $_FILES['user_image']['tmp_name'];
+    $user_ip = getIPAddress();
+
+
+//select query
+$select_query = "Select * from user_table where username ='$username' or email = '$email'";
+$result = mysqli_query($con, $select_query);
+$rows_count = mysqli_num_rows($result);
+if($rows_count > 0){
+    echo "<script>alert('Username and email already exist') </script>";
+}else if($password != $cpassword){
+    echo "<script>alert('Passwords do not match') </script>";
+
+}
+else{
+    //insert query
+    move_uploaded_file($image_tmp_name, "./user_images/$image"); //error osht tum qit
+
+$insert_query = "insert into user_table (username, email, password, user_ip, role, image)
+values('$username', '$email', '$hash_password', '$user_ip','$role','$image')";
+
+$sql_execute = mysqli_query($con, $insert_query);
+
+// if ($sql_execute) {
+//     // User registration successful
+//     if ($role == 'Admin') {
+//         // Redirect to admin dashboard
+//         header("Location: products.php");
+//         exit;
+//     } else {
+//         // Redirect to user dashboard
+//         header("Location: profile.php");
+//         exit;
+//     }
+// } else {
+//     // Error occurred while inserting into the database
+//     echo "An error occurred while registering. Please try again.";
+// }
+
+
+}
+
+
+
+
+// //selecting cart items video 42
+$select_cart_items = "SELECT * FROM card_details WHERE ip_address=
+'$user_ip'"; 
+$result_cart = mysqli_query($con, $select_cart_items); //con
+$rows_count = mysqli_num_rows($result_cart);
+if($rows_count > 0){
+    $_SESSION['username'] = $username;
+    echo "<script>alert('You have items in your cart') </script>";
+    echo "<script>window.open('checkout.php', '_self') </script>";
+}else{
+    echo "<script>window.open('login.php', '_self') </script>";
+
+}
+
+}
+?>
