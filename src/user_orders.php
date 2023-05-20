@@ -1,13 +1,7 @@
 <?php
-session_start(); // Start the session
 
 include('../includes/connect.php');
 
-$username = $_SESSION['username'];
-$get_user = "SELECT * FROM user_table WHERE username = '$username'";
-$result = mysqli_query($con, $get_user);
-$row_fetch = mysqli_fetch_array($result);
-$user_id = $row_fetch['user_id'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,6 +9,14 @@ $user_id = $row_fetch['user_id'];
 
 </head>
 <body>
+    <?php
+$username = $_SESSION['username'];
+$get_user = "SELECT * FROM user_table WHERE username = '$username'";
+$result = mysqli_query($con, $get_user);
+$row_fetch = mysqli_fetch_array($result);
+$user_id = $row_fetch['user_id'];
+
+?>
     <h3 class="text-success text-center mt-5">All my orders</h3>
     <table class="table table-bordered mt-5">
         <thead class="bg-info text-center">
@@ -30,14 +32,17 @@ $user_id = $row_fetch['user_id'];
         </thead>
         <tbody class="bg-secondary text-light">
             <?php
+            
             $get_order_details = "SELECT * FROM user_orders WHERE user_id = $user_id";
             $result_orders = mysqli_query($con, $get_order_details);
             $number = 1;
             while ($row_orders = mysqli_fetch_array($result_orders)) {
                 $order_id = $row_orders['order_id'];
                 $amount_due = $row_orders['amount_due'];
-                $invoice_number = $row_orders['invoice_number'];
+                $amount_due = $row_orders['amount_due'];
                 $total_products = $row_orders['total_products'];
+
+                $invoice_number = $row_orders['invoice_number'];
                 $order_status = $row_orders['order_status'];
                 if ($order_status == 'pending') {
                     $order_status = 'Incomplete';
