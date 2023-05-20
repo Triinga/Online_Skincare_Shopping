@@ -48,7 +48,7 @@ if (!empty($get_item_quantity)) {
 }
 
 $insert_orders = "INSERT INTO user_orders (user_id, amount_due, invoice_number, total_products, order_date, order_status)
-VALUES ('$user_id', '$subtotal', '$invoice_number', '$count_products', NOW(), '$status')";
+VALUES ($user_id, $subtotal, $invoice_number, $count_products, NOW(), '$status')";
 
 $result_query = mysqli_query($con, $insert_orders);
 if ($result_query) {
@@ -58,7 +58,7 @@ if ($result_query) {
 
 // Orders pending
 $insert_pending_orders = "INSERT INTO orders_pending (user_id, invoice_number, product_id, quantity, order_status)
-VALUES ('$user_id', '$invoice_number', '$product_id', '$quantity', '$status')";
+VALUES ($user_id, $invoice_number, $product_id, $quantity, '$status')";
 $result_pending_orders = mysqli_query($con, $insert_pending_orders);
 
 // Delete items from cart
