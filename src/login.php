@@ -1,45 +1,7 @@
 <?php
-
 include('../includes/connect.php');
 include('../functions/common_functions.php');
 @session_start();
-
-
-if(isset($_POST['submit'])){
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    
-
-    $select_query = "Select * from user_table where username = '$username'";
-    $result = mysqli_query($con, $select_query);
-    $row_count = mysqli_num_rows($result);
-    $row_data = mysqli_fetch_assoc($result);
-    $user_ip = getIPAddress();
-
-//Cart item 44video
-$select_query_cart = "Select * from card_details where ip_address = '$user_ip'";
-$select_cart = mysqli_query($con, $select_query_cart); //con
-$row_count_cart = mysqli_num_rows($select_cart);
-    if($row_count > 0){
-        $_SESSION['username'] = $username;
-        if(password_verify($password, $row_data['password'])){
-            if($row_count == 1 and $row_count_cart == 0){ //nese user ka ne cart nje item e qon te payment, video 44    
-                $_SESSION['username'] = $username;                
-                echo "<script>alert('Login succesfully!')</script>";
-                echo "<script>window.open('profile.php','_self')</script>";
-            }else{
-                $_SESSION['username'] = $username;
-                echo "<script>alert('Login succesfully!')</script>";
-                echo "<script>window.open('profile.php','_self')</script>";
-            }
-        }else{
-            echo "<script>alert('Invalid Credentials')</script>";
-        }
-    }else{
-        echo "<s cript>alert('Invalid Credentials')</script>";
-    }
-}
-
 ?>
 
 <!Doctype html>
@@ -47,7 +9,6 @@ $row_count_cart = mysqli_num_rows($select_cart);
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="google-signin-client_id" content="862629191035-grcft2572iiup79mgi9vj1vkeeiacfnt.apps.googleusercontent.com">
     <link rel="shortcut icon" type="image/x-icon" href="logo3.png"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -55,7 +16,7 @@ $row_count_cart = mysqli_num_rows($select_cart);
     <link rel="stylesheet" href="signup.php">
     <link rel="stylesheet" href="home.html">
     <script src="https://app.enzuzo.com/apps/enzuzo/static/js/__enzuzo-cookiebar.js?uuid=f4accd94-e6da-11ed-8b76-c317f674c707"></script>
-    <script src="https://apis.google.com/js/platform.js" async defer> </script>
+
     <title>Skin care</title>
   </head>
   <body>
@@ -84,11 +45,9 @@ $row_count_cart = mysqli_num_rows($select_cart);
                         </div>
                         <div class="form-row">
                             <div class="col-lg-7">
-                               <button type="submit" class="btn1 mt-3 mb-5" name = "submit" name="user_login">Login</butto>
+                               <button type="submit" class="btn1 mt-3 mb-5" name = "submit" name="user_login">Login</button>
                             </div>
-                            
                         </div>
-                        <div class="g-signin2" data-onsuccess="onSignIn"></div>
                         <label class="remember-me"><input type="checkbox">Remember me</label>
                         <div ><p>Don't have an account? <a href="signup.php" class="register-here"><i>Register here</i></a></p></div>
                     </form> 
@@ -98,11 +57,6 @@ $row_count_cart = mysqli_num_rows($select_cart);
             </div>
         </div>
      </section>
-     <script>
-        function onSignIn(googleUser){
-            console.log('User is'+JSON.stringify(googleUser.getBasicProfile()));
-        }
-     </script>
      <script src="Login.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -112,3 +66,44 @@ $row_count_cart = mysqli_num_rows($select_cart);
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>
+
+<?php
+
+
+if(isset($_POST['submit'])){
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    
+
+    $select_query = "Select * from user_table where username = '$username'";
+    $result = mysqli_query($con, $select_query);
+    $row_count = mysqli_num_rows($result);
+    $row_data = mysqli_fetch_assoc($result);
+    $user_ip = getIPAddress();
+
+//Cart item 44video
+$select_query_cart = "Select * from card_details where ip_address = '$user_ip'";
+$select_cart = mysqli_query($con, $select_query_cart); //con
+$row_count_cart = mysqli_num_rows($select_cart);
+    if($row_count > 0){
+        $_SESSION['username'] = $username;
+        if(password_verify($password, $row_data['password'])){
+            if($row_count == 1 and $row_count_cart == 0){ //nese user ka ne cart nje item e qon te payment, video 44
+                $_SESSION['username'] = $username;                
+                echo "<script>alert('Login succesfully!')</script>";
+                echo "<script>window.open('profile.php','_self')</script>";
+            }else{
+                $_SESSION['username'] = $username;
+                echo "<script>alert('Login succesfully!')</script>";
+                echo "<script>window.open('profile.php','_self')</script>";
+            }
+        }else{
+            echo "<script>alert('Invalid Credentials')</script>";
+        }
+    }else{
+        echo "<s cript>alert('Invalid Credentials')</script>";
+    }
+}
+
+
+?>
