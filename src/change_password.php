@@ -27,7 +27,7 @@ if (isset($_POST['change_password'])) {
         mysqli_query($con, $updateQuery);
 
         echo "<script>alert('Password changed successfully')</script>";
-        echo "<script>window.open('profile.php','_self')</script>";
+        echo "<script>window.open('login.php','_self')</script>";
     }
 }
 ?>
