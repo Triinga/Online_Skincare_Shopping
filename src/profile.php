@@ -22,9 +22,8 @@ session_start();
 body{
     overflow-x: hidden;
 }
-
-
     </style>
+      
 </head> 
     <body>
 
@@ -33,8 +32,7 @@ body{
 card();
 ?> 
 -->
-
-
+ 
 <nav class ="navbar navbar-expand-lg navbar-dark bg-secondary">
 <ul class="navbar-nav me-auto">
     <?php
@@ -65,7 +63,7 @@ card();
 
 <!-- third child -->
 <div class="bg-light"></div>
- <h3 class="text-center">Hidden Store</h3>
+ <h3 class="text-center mt-5">Hidden Store</h3>
  <p class="text-center">Communciation is at the heart of the e-commerce and community</p>
 </div>
 
@@ -76,18 +74,15 @@ card();
         <li class="nav-item bg-info" > 
             <a class = "nav-link text-light" href = "#"><h4>Your profile</h4></a>
         </li>
-        <!-- <li class ="nav-item bg-info">
-            <img src="../fotot/skin1.jpg">
-        </li> -->
 
 <?php
 $username = $_SESSION['username'];
-$user_image = "Select * from `user_table` where username = '$username'";
+$user_image = "Select * from user_table where username = '$username'";
 $user_image = mysqli_query($con, $user_image);
 $row_image = mysqli_fetch_array($user_image);
 $user_image = $row_image['image'];
 echo "<li class='nav-item'> 
-<img src='../src/uploaded_img/$user_image' alt='' class='profile_img my-4'>
+<img src='./user_images/$user_image' alt='' class='profile_img my-4'>
 </li>";
 ?>
     
@@ -111,14 +106,11 @@ echo "<li class='nav-item'>
             <a class = "nav-link text-light" href = "login.php">Logout</a>
         </li>
 </ul>
-    </div>
+</div>
     <div class="col-md-10">
-        <?php get_user_order_details(); 
-     ?>
-    </div>
- </div>
- <?php
- if(isset($_GET['edit_account'])){
+    <?php 
+        get_user_order_details(); 
+        if(isset($_GET['edit_account'])){
             include('edit_account.php');
         }
         if(isset($_GET['my_orders'])){
@@ -127,7 +119,12 @@ echo "<li class='nav-item'>
         if(isset($_GET['delete_account'])){
             include('delete_account.php');
         }
-        ?>
+    ?>
+    </div>
+ </div>
+
+
+
         
 
 </body>
