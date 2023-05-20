@@ -35,7 +35,7 @@ $user_id = $run_query['user_id'];
 
 ?>
     <div class="container">
-        <h2 class = "text-center text-info">Payment Option</h2>
+        <h2 class = "text-center text-info mt-5" >Payment Option</h2>
         <div class = "row d-flec justify-content:center align-items-center mt-5">
             <div class = "col-md-6">
             <a href="https://www.raiffeisen-kosovo.com/" target="_blank">
