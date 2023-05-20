@@ -40,9 +40,13 @@ include('../functions/common_functions.php');
                         </div>
                         <div class="form-row">
                             <div class="col-lg-7">
+                                
                                 <input type="password" placeholder="Password" name="password" class="form-control my-3 p-4" id="form">
+                                <button type="button" class="btn2 mt-2 mb-5" onclick="window.location.href='change_password.php'">Change Password</button>
                             </div>
                         </div>
+                        
+
                         <div class="form-row">
                             <div class="col-lg-7">
                                <button type="submit" class="btn1 mt-3 mb-5" name = "submit" name="user_login">Login</button>
