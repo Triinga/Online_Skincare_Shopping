@@ -5,8 +5,16 @@ include('../includes/connect.php'); // Include the file that establishes the dat
 include('../functions/common_functions.php'); // Include any necessary common functions
 session_start();
 
-// Retrieve the current user's username from the session
-$username = $_SESSION['username'];
+// Retrieve the current user's username from the session if it is set
+if (isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
+} else {
+    // Redirect the user to the login page or display an error message
+    // if the 'username' key is not set in the session
+    // Example:
+    // header('Location: login.php');
+    // exit();
+}
 
 if (isset($_POST['change_password'])) {
     // Retrieve the submitted form data

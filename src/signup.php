@@ -102,6 +102,7 @@ values('$username', '$email', '$hash_password', '$user_ip','$role','$image')";
 
 $sql_execute = mysqli_query($con, $insert_query);
 
+<<<<<<< HEAD
  if ($sql_execute) {
      // User registration successful
      if ($role == 'Admin') {
@@ -117,6 +118,23 @@ $sql_execute = mysqli_query($con, $insert_query);
      // Error occurred while inserting into the database
      echo "An error occurred while registering. Please try again.";
  }
+=======
+if ($sql_execute) {
+    // User registration successful
+    if ($role == 'Admin') {
+        // Redirect to admin dashboard
+        header("Location: products.php");
+        exit;
+    } else {
+        // Redirect to user dashboard
+        header("Location: profile.php");
+        exit;
+    }
+} else {
+    // Error occurred while inserting into the database
+    echo "An error occurred while registering. Please try again.";
+}
+>>>>>>> 8427aad7791032df59daae87032387226c720e3c
 
 
 }

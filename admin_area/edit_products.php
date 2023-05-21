@@ -12,8 +12,7 @@
         $product_keywords=$row['product_keywords'];
         $category_id=$row['category_id'];
         $product_image1=$row['product_image1'];
-        $product_image2=$row['product_image2'];
-        $product_image3=$row['product_image3'];
+ 
         $brand_id=$row['brand_id'];
         $product_price=$row['product_price'];
         $product_price=$row['product_price'];
@@ -102,24 +101,6 @@
             </div>
         </div>
 
-        </div>
-        <div class="form-outline w-50 m-auto mb-4">
-            <label for="product_image2" class="form-label">Product Image2</label>
-            <div class="d-flex">
-            <input type="file" id="product_image2" name="product_image2" 
-            class="form-control  w-50 m-auto"
-            required="required">
-            <img src="./product_images<?php echo $product_image2 ?>" alt="" class="product_img">
-            </div>
-        </div>
-        <div class="form-outline w-50 m-auto mb-4">
-            <label for="product_image3" class="form-label">Product Image3</label>
-            <div class="d-flex">
-            <input type="file" id="product_image3" name="product_image3" class="form-control  w-50 m-auto"
-            required="required">
-            <img src="./product_images/<?php echo $product_image1?>" alt="" class="product_img">
-            </div>
-        </div>
         
         <div class="form-outline w-50 m-auto mb-4">
             <label for="product_price" class="form-label">Product Price</label>
@@ -146,16 +127,12 @@ if(isset($_POST['edit_products'])){
     $product_price =$_POST['product_price'];
 
     $product_image1=$_FILES['product_image1']['name'];
-    $product_image2=$_FILES['product_image2']['name'];
-    $product_image3=$_FILES['product_image3']['name'];
+   
 
     $temp_image1 = $_FILES['product_image1']['tmp_name'];
-    $temp_image2 = $_FILES['product_image2']['tmp_name'];
-    $temp_image3 = $_FILES['product_image3']['tmp_name'];
-    
+   
     move_uploaded_file($temp_image1, "./product_images/$product_image1");
-    move_uploaded_file($temp_image2, "./product_images/$product_image2");
-    move_uploaded_file($temp_image3, "./product_images/$product_image3");
+   
     
 
 
@@ -166,8 +143,7 @@ if(isset($_POST['edit_products'])){
     category_id = '$product_category',
     brand_id = '$product_brands',
     product_image1 = '$product_image1',
-    product_image2 = '$product_image2',
-    product_image3 = '$product_image3',
+   
     product_price = '$product_price',
     `date` = NOW()
     WHERE product_id = '$edit_id'";
