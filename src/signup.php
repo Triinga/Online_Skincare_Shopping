@@ -104,8 +104,6 @@ $sql_execute = mysqli_query($con, $insert_query);
 
 
 
-}
-
 
 
 
