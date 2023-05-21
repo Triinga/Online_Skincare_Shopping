@@ -79,42 +79,37 @@ include('../functions/common_functions.php');
 </html>
 
 <?php
-
-
-if(isset($_POST['submit'])){
+if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
-    
 
-    $select_query = "Select * from user_table where username = '$username'";
+    $select_query = "SELECT * FROM user_table WHERE username = '$username'";
     $result = mysqli_query($con, $select_query);
     $row_count = mysqli_num_rows($result);
     $row_data = mysqli_fetch_assoc($result);
     $user_ip = getIPAddress();
 
-//Cart item 44video
-$select_query_cart = "Select * from card_details where ip_address = '$user_ip'";
-$select_cart = mysqli_query($con, $select_query_cart); //con
-$row_count_cart = mysqli_num_rows($select_cart);
-    if($row_count > 0){
+    // Cart item 44video
+    $select_query_cart = "SELECT * FROM card_details WHERE ip_address = '$user_ip'";
+    $select_cart = mysqli_query($con, $select_query_cart);
+    $row_count_cart = mysqli_num_rows($select_cart);
+
+    if ($row_count > 0) {
         $_SESSION['username'] = $username;
-        if(password_verify($password, $row_data['password'])){
-            if($row_count == 1 and $row_count_cart == 0){ //nese user ka ne cart nje item e qon te payment, video 44
-                $_SESSION['username'] = $username;                
-                echo "<script>alert('Login succesfully!')</script>";
-                echo "<script>window.open('profile.php','_self')</script>";
-            }else{
-                $_SESSION['username'] = $username;
-                echo "<script>alert('Login succesfully!')</script>";
-                echo "<script>window.open('profile.php','_self')</script>";
+        if (password_verify($password, $row_data['password'])) {
+            $_SESSION['username'] = $username;
+            echo "<script>alert('Login successful!')</script>";
+            
+            if ($row_data['role'] == 'Admin') {
+                echo "<script>window.open('about-us.html', '_self')</script>";
+            } else if($row_data['role'] == 'User'){
+                echo "<script>window.open('profile.php', '_self')</script>";
             }
-        }else{
-            echo "<script>alert('Invalid Credentials')</script>";
+        } else {
+            echo "<script>alert('Invalid credentials')</script>";
         }
-    }else{
-        echo "<s cript>alert('Invalid Credentials')</script>";
+    } else {
+        echo "<script>alert('Invalid credentials')</script>";
     }
 }
-
-
 ?>
