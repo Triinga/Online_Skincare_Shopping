@@ -37,7 +37,7 @@
         <div class="card  mb-2">
           <div class="card-body ">
             <h5 class="card-title"><?php echo $brand_title; ?></h5>
-            <a href='index.php?delete_category=<?php echo $category_id; ?>' class='btn btn-danger'><i class='fas fa-trash'></i> Delete</a>
+            <a href='index.php?delete_brands=<?php echo $brand_id; ?>' class='btn btn-danger'><i class='fas fa-trash'></i> Delete</a>
           </div>
         </div>
       </div>

@@ -2,15 +2,16 @@
   background-color: aliceblue;
   
 }
-.all1{
-  width:100%;
-  position:absolute;
-  height:100vh;
-  top:0px;
-  bottom:0px;
-  left:0px;
-  right:0px;
+*{
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
+
 
 
 /* header */
@@ -88,11 +89,13 @@ header {
   
  }
  
-  .items{
-  display: inline-flex;
-  padding: 0 300px;
+    .items {
+      display: inline-flex;
+      /* padding: 0 300px; */
+    }
+    
  
- }
+
 
   .items a{
   text-decoration: none;
@@ -500,16 +503,3 @@ transition: 0.5s;
     margin: 4px 0;
   }
 
-
-
-
-
-
-
-
-
-
-   
-
-  
-   

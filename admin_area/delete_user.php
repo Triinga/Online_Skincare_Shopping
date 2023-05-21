@@ -1,9 +1,10 @@
 <?php
 
-if(isset($_GET['list_users'])){
-    $delete_user = $_GET['list_users'];
 
-    $delete_query = "DELETE FROM `user_table` WHERE user_id = $delete_category";
+if(isset($_GET['delete_user'])){
+    $delete_user = $_GET['delete_user'];
+
+    $delete_query = "DELETE FROM `user_table` WHERE user_id = $delete_user";
     $result = mysqli_query($con, $delete_query);
     if($result){
         echo "<script>alert('user deleted successfully')</script>";

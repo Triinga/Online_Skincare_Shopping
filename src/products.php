@@ -4,14 +4,14 @@ include('../includes/connect.php'); //dont use dots cause folders are in the sam
 include('../functions/common_functions.php');
 session_start();
 
-// Fetch products based on selected filters
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_type'])) {
-    $productType = $_POST['product_type'];
-    $filteredProducts = getProductsByType($productType); // Modify this function to fetch products based on the selected type
-    renderProducts($filteredProducts); // Modify this function to render the filtered products
-    exit(); // End the script execution after sending the response
-}
-?>
+// // Fetch products based on selected filters
+// if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_type'])) {
+//     $productType = $_POST['product_type'];
+//     $filteredProducts = getProductsByType($productType); // Modify this function to fetch products based on the selected type
+//     renderProducts($filteredProducts); // Modify this function to render the filtered products
+//     exit(); // End the script execution after sending the response
+// }
+// ?>
 
 
 <html>

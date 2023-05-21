@@ -61,7 +61,6 @@ session_start();
         }
 ?>
 </ul>
-</nav>
 
 
  <!-- #region -->
