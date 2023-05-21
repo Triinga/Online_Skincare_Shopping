@@ -55,9 +55,7 @@ if(isset($_GET['edit_account'])){
         <div class="form-outline mb-4">
             <input type="email" class= "form-control w-50 m-auto" value="<?php echo $user_email?>" name="user_email">
         </div>
-        <div class="form-outline mb-4">
-            <input type="submit" class= "form-control w-50 m-auto bg-info py-2 px-3 border-0" value="Change password">
-        </div>
+        
         <div class="form-outline mb-4 d-flex w-50 m-auto">
             <input type="file" class= "form-control m-auto" name="user_image">
             <img src="./user_images/<?php echo $user_image ?>" alt="" class ="edit_image">
