@@ -1,5 +1,5 @@
 <h3 class="text-center text-success">All Brands</h3>
-<table class="table table-bordered mt-5">
+<!-- <table class="table table-bordered mt-5">
     <thead class="bg-info">
         <tr class="text-center">
             <th>Slno</th>
@@ -7,8 +7,14 @@
             <th>Edit</th>
             <th>Delete</th>
         </tr>
-    </thead>
-    <tbody class="bg-secondary text-light">
+    </thead> -->
+    <!-- <tbody class="bg-secondary text-light"> -->
+    <div class="card mt-5">
+  <div class="card-header bg-info text-white">
+    Categories
+  </div>
+  <div class="card-body">
+    <div class="row">
         <?php
         $select_brand="SELECT * FROM `brands`";
         $result=mysqli_query($con, $select_brand);
@@ -19,27 +25,35 @@
             $number++;
 
         ?>
-        <tr class="text-center">
-            <td><?php echo $number; ?></td>
-            <td><?php echo $brand_title; ?></td>
-            <td><a href='' class='text-light'><i class='fas fa-pen'></i></a></td>
+      
+          
+            <!-- <td><a href='' class='text-light'><i class='fas fa-pen'></i></a></td>
         <td><a href='index.php?delete_brands=<?php echo $brand_id?>' 
         type="button" class=" text-light" data-toggle="modal" data-target="#exampleModal"
         class=''><i class='fas fa-trash'></i></a></td>
-        </tr>
+        </tr> -->
+        
+        <div class="col-md-3">
+        <div class="card  mb-2">
+          <div class="card-body ">
+            <h5 class="card-title"><?php echo $brand_title; ?></h5>
+            <a href='index.php?delete_category=<?php echo $category_id; ?>' class='btn btn-danger'><i class='fas fa-trash'></i> Delete</a>
+          </div>
+        </div>
+      </div>
         
         <?php
         
     }
         ?>
-
+<!-- 
     </tbody>
-</table>
+</table> -->
 
-<!-- Button trigger modal -->
-<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button> -->
+</div>
+  </div>
+</div>
+
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -59,3 +73,10 @@
     </div>
   </div>
 </div>
+
+
+
+
+   
+     
+     

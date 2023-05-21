@@ -188,7 +188,9 @@ include('../functions/common_functions.php');
         if(isset($_GET['logout'])){
             include('logout.php');
         }
-        
+        if(isset($_GET['delete_user'])){
+            include('delete_user.php');
+        }
         ?>
     </div>
 

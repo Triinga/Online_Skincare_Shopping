@@ -40,7 +40,8 @@
                 <td><img src='../users_area/user_images/$user_image' alt='$username' class='product_img'</td>
               
                 <td>$user_email</td>
-                <td><a href='' class='text-light'><i class='fas fa-trash'></i></a></td>
+                <a href='index.php?delete_user=<?php echo $user_id; ?>' class='btn btn-danger'><i class='fas fa-trash'></i> Delete</a>
+
                 </tr>";
             
 
@@ -53,3 +54,4 @@
        
     </tbody>
 </table>
+
