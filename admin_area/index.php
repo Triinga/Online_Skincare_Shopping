@@ -104,11 +104,11 @@ include('../functions/common_functions.php');
     <!-- navbar -->
     <div class="navbar">
         <div class="container-fluid">
-            <img src="../fotot/aqua.jpg" class="logo">
+            <img src="../fotot/EditProfile.jpg" class="logo">
             <nav class="navbar navbar-expand-lg">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="" class="nav-link">Welcome guest</a>
+                        <a href="" class="nav-link">Welcome Admin</a>
                     </li>
                 </ul>
             </nav>
@@ -117,14 +117,14 @@ include('../functions/common_functions.php');
 
     <!-- dashboard title -->
     <div class="dashboard-title">
-        <h3>Manage Details</h3>
+        <h3>Admin Dashboard</h3>
     </div>
 
     <!-- admin profile -->
-    <div class="admin-profile">
+    <!-- <div class="admin-profile">
         <a href="#"><img src="../fotot/fyt1.png" class="admin_image"></a>
         <p class="text-light">Admin name</p>
-    </div>
+    </div> -->
 
     <!-- admin actions -->
     <div class="admin-actions">
@@ -139,6 +139,7 @@ include('../functions/common_functions.php');
         <a href="index.php?list_users">List users</a>
         <a href="index.php?logout">Logout</a>
     </div>
+
 
     <!-- content section -->
     <div class="container">
@@ -176,6 +177,7 @@ include('../functions/common_functions.php');
         if(isset($_GET['delete_brands'])){
             include('delete_brands.php');
         }
+
         if(isset($_GET['list_orders'])){
             include('list_orders.php');
         }
@@ -188,7 +190,12 @@ include('../functions/common_functions.php');
         if(isset($_GET['logout'])){
             include('logout.php');
         }
-        
+        if(isset($_GET['delete_user'])){
+            include('delete_user.php');
+        }
+        if(isset($_GET['delete_order'])){
+            include('delete_order.php');
+        }
         ?>
     </div>
 
