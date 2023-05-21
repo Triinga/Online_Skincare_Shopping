@@ -128,16 +128,16 @@ include('../functions/common_functions.php');
 
     <!-- admin actions -->
     <div class="admin-actions">
-        <a href="insert_product.php">Insert products</a>
-        <a href="index.php?view_products">View products</a>
-        <a href="index.php?insert_category">Insert categories</a>
-        <a href="index.php?view_categories">View categories</a>
-        <a href="index.php?insert_brand">Insert Brands</a>
-        <a href="index.php?view_brands">View Brands</a>
-        <a href="index.php?list_orders">All Orders</a>
-        <a href="index.php?list_payment">All payments</a>
-        <a href="index.php?list_users">List users</a>
-        <a href="index.php?logout">Logout</a>
+        <a href="insert_product.php" id="insertProduct">Insert products</a>
+        <a href="index.php?view_products"id="viewProducts">View products</a>
+        <a href="index.php?insert_category" id="insertCategory">Insert categories</a>
+        <a href="index.php?view_categories"id="viewCategories">View categories</a>
+        <a href="index.php?insert_brand" id="insertBrand">Insert Brands</a>
+        <a href="index.php?view_brands"id="viewBrands">View Brands</a>
+        <a href="index.php?list_orders"id="listOrders">All Orders</a>
+        <a href="index.php?list_payment"id="listPayments">All payments</a>
+        <a href="index.php?list_users"id="listUsers">List users</a>
+        <a href="index.php?logout"id="logout">Logout</a>
     </div>
 
 
@@ -206,6 +206,47 @@ include('../functions/common_functions.php');
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    </body>
+  
+
+ <script>
+  // Attach click event listeners to admin action links
+  var adminLinks = document.getElementsByClassName('admin-actions')[0].getElementsByTagName('a');
+  for (var i = 0; i < adminLinks.length; i++) {
+    var link = adminLinks[i];
+    var linkId = link.getAttribute("id");
+    
+    // Exclude "Logout" and "Insert products" links
+    if (linkId !== "logout" && linkId !== "insertProduct") {
+      link.addEventListener("click", makeRequest);
+    }
+  }
+
+  // Function to make the AJAX request
+  function makeRequest(event) {
+    event.preventDefault(); // Prevent the default link behavior
+
+    var url = this.getAttribute("href"); // Get the URL from the link's href attribute
+    var container = document.getElementsByClassName("container")[0]; // Get the container element to update
+    //Perdorimi i AJAX XMLHTTP
+    var xhr = new XMLHttpRequest(); 
+
+    xhr.open("GET", url, true); // Prepare the request
+
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        // Request completed successfully
+        container.innerHTML = xhr.responseText; // Update the container with the fetched content
+      } else if (xhr.readyState === 4) {
+        // Request failed or encountered an error
+        console.error("Request failed with status: " + xhr.status);
+      }
+    };
+
+    xhr.send(); // Send the request
+  }
+</script>  
+
+
+</body>
 </html>
 

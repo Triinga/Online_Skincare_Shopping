@@ -18,6 +18,8 @@ session_start();
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link rel="stylesheet" href = "profile.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="shortcut icon" type="image/x-icon" href="logo3.png"/>
     <style>
 body{
     overflow-x: hidden;
@@ -92,10 +94,7 @@ echo "<li class='nav-item'>
         <li class="nav-item"> 
             <a class = "nav-link text-light" href = "profile.php?edit_account">Edit Account</a>
         </li>
-        <li class="nav-item"> 
-            <a class = "nav-link text-light" href = "profile.php?change-password">Change password</a>
-        </li>
-
+    
         <li class="nav-item "> 
             <a class = "nav-link text-light" href = "profile.php?my_orders">My orders</a>
         </li>
@@ -123,8 +122,66 @@ echo "<li class='nav-item'>
     </div>
  </div>
 
+ 
+<!-- footer -->
+ <section id="footer">
+    <div class="div">
+      <div class=" div1_footer ">
+        <div class="div2 div_box">
+          <img id= "div_img" src="../fotot/logo2.png">
+          <p>Your skincare place </p>
+        </div>
+
+          
+            <address class="div2 div_box">
+            <p><b>CONTACT US</b></p>
+            <p> <i class="fa-sharp fa-solid fa-location-dot"></i> Qendra e Student&euml;ve, Prishtin&euml; </p>
+            <p> <i class="fa-solid fa-phone"></i> +38249123456</p>
+           
+              <i class="fa-solid fa-envelope"></i>
+               <a href="mailto:pearlSkin@gmail.com">pearlSkin@gmail.com</a>
+              </address>
+         
+  
+          <div class="div2 div_box">
+            <p><b>About US</b></p>
+            <p>P&euml;r tu lidhur direkt me ne</p>
+            <input list="emailat" name="email" id="email" class="email1">
+            <datalist id="emailat">
+              <option value="tringa.baftiu@gmail.com">
+              <option value="rinesa.zuzaku@gmail.com">
+              <option value="rinesa.bislimi@gmail.com">
+              <option value="vijola.neziraj@gmail.com">
+              <option value="gentrit.@gmail.com">
+
+              
+            </datalist>
+           
+          </div>
+
+          <div class="div2 div_box">
+             <form id = "form_id"> 
+             <fieldset id="fieldset_id">
+             <legend>Subscribe Newsletter</legend>
+     
+               <input type="email" class="email" placeholder="your email"> 
+             
+              <button type="button" class="button">Subscribe</button>
+              </fieldset>
+             </form>
+          </div>
+     </div>
+    <div> 
+
+    
+      
+   
+    </div>
+    
+    <p class="copyright">&copy; PearlSkin</p>
 
 
+    </section>
         
 
 </body>
