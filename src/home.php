@@ -1,6 +1,72 @@
+<?php
+
+session_start();
+?>
 <!DOCTYPE html>
 <html>
   <head>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js" data-cfasync="false"></script>
+<script>
+window.addEventListener('load', function(){
+  window.cookieconsent.initialise({
+   revokeBtn: "<div class='cc-revoke'></div>",
+   type: "opt-in",
+   position: "bottom-right",
+   palette: {
+       popup: {
+           background: "#647",
+           text: "#fdf"
+        },
+       button: {
+           background: "#fbf",
+           text: "#404"
+        }
+    },
+   content: {
+       message: "Duke përdorur shërbimet tona  ju pajtoheni me përdorimin tonë të Cookies. Ne së bashku me partnerët tanë operojmë në të gjithë botën dhe përdorim cook",
+       link: "Learn more",
+       allow: "Allow Cookies",
+       deny: "Decline",
+       href: "http://localhost:81/Online_Skincare_Shopping/src/cookiespolicy.php"
+    },
+    onInitialise: function(status) {
+      if(status == cookieconsent.status.allow) myScripts();
+    },
+    onStatusChange: function(status) {
+      if (this.hasConsented()) myScripts();
+    }
+  })
+});
+
+function myScripts() {
+
+   // Paste here your scripts that use cookies requiring consent. See examples below
+
+   // Google Analytics, you need to change 'UA-00000000-1' to your ID
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-00000000-1', 'auto');
+      ga('send', 'pageview');
+
+
+   // Facebook Pixel Code, you need to change '000000000000000' to your PixelID
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window, document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '000000000000000');
+      fbq('track', 'PageView');
+
+}
+</script>
+    ?>
   
    <meta name="viewport" content="with=device-width, initial-scale=1.0">
         <title> Pearl skin </title>
@@ -25,10 +91,37 @@
     
   </head>
   <body>
-    <?php
- include('header.php');
+  <?php
+include('header1.php');
+?>
 
- ?>
+<nav class ="navbar navbar-expand-lg navbar-dark bg-secondary">
+<ul class="navbar-nav me-auto">
+    <?php
+        if(!isset($_SESSION['username'])){
+            echo "   <li class='nav-item'>
+            <a class='nav-link' href='#'>Welcome Guest</a>
+            </li>"; 
+        }else{
+            echo "<li class='nav-item'>
+            <a class='nav-link' href='#'>Welcome ".$_SESSION['username']."</a>
+            </li>";
+        }
+
+        
+        if(!isset($_SESSION['username'])){
+            echo "<li class='nav-item'>
+            <a class='nav-link' href='login.php'>Login</a>
+            </li>";
+        }else{
+            echo "<li class='nav-item'>
+            <a class='nav-link' href='logout.php'>Logout</a>
+            </li>";
+        }
+?>
+</ul>
+</nav>
+
   
   <style>
       .submenu-items {
@@ -187,7 +280,7 @@
         </script>
    
         </ul>
-        <a href = "SkinCareTips.html" > <button class = "buttonK"> Lexo m&euml; shum&euml; </button> </a> 
+        <a href = "SkinCareTips.php" > <button class = "buttonK"> Lexo m&euml; shum&euml; </button> </a> 
         </div>
 
         <img id="keshilla_img" src="../fotot/keshillat.jpg" style='width:30%; align-items: center;' />

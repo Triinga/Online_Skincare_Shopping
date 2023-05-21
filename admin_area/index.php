@@ -208,42 +208,6 @@ include('../functions/common_functions.php');
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   
 
- <script>
-  // Attach click event listeners to admin action links
-  var adminLinks = document.getElementsByClassName('admin-actions')[0].getElementsByTagName('a');
-  for (var i = 0; i < adminLinks.length; i++) {
-    var link = adminLinks[i];
-    var linkId = link.getAttribute("id");
-    
-    // Exclude "Logout" and "Insert products" links
-    if (linkId !== "logout" && linkId !== "insertProduct") {
-      link.addEventListener("click", makeRequest);
-    }
-  }
-
-  // Function to make the AJAX request
-  function makeRequest(event) {
-    event.preventDefault(); // Prevent the default link behavior
-
-    var url = this.getAttribute("href"); // Get the URL from the link's href attribute
-    var container = document.getElementsByClassName("container")[0]; // Get the container element to update
-    //Perdorimi i AJAX XMLHTTP
-    var xhr = new XMLHttpRequest(); 
-
-    xhr.open("GET", url, true); // Prepare the request
-
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-        // Request completed successfully
-        container.innerHTML = xhr.responseText; // Update the container with the fetched content
-      } else if (xhr.readyState === 4) {
-        // Request failed or encountered an error
-        console.error("Request failed with status: " + xhr.status);
-      }
-    };
-
-    xhr.send(); // Send the request
-  }
 </script>  
 
 

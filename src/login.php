@@ -101,7 +101,7 @@ if (isset($_POST['submit'])) {
             echo "<script>alert('Login successful!')</script>";
             
             if ($row_data['role'] == 'Admin') {
-                echo "<script>window.open('about-us.html', '_self')</script>";
+                echo "<script>window.open('../admin_area/index.php', '_self')</script>";
             } else if($row_data['role'] == 'User'){
                 echo "<script>window.open('profile.php', '_self')</script>";
             }
@@ -113,3 +113,4 @@ if (isset($_POST['submit'])) {
     }
 }
 ?>
+   

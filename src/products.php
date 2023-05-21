@@ -1,8 +1,13 @@
+<?php
+session_start();
+?>
+<?php
+include('header1.php');
+?>
 <!-- connect file -->
 <?php
-include('../includes/connect.php'); //dont use dots cause folders are in the same level
-include('../functions/common_functions.php');
-session_start();
+include('../includes/connect.php');
+// include('../functions/common_functions.php');
 
 // // Fetch products based on selected filters
 // if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_type'])) {
@@ -14,22 +19,7 @@ session_start();
 // ?>
 
 
-<html>
-<head>
-    <link rel="stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"  >
-    <link rel="stylesheet" href = "style.css">
-    <link rel="stylesheet" href = "preferencat.css">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
-    <!-- font awesome link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-</head>
-
-    <body>
-        
-<!-- second child -->
 <nav class ="navbar navbar-expand-lg navbar-dark bg-secondary">
 <ul class="navbar-nav me-auto">
     <?php
@@ -57,32 +47,25 @@ session_start();
 </ul>
 </nav>
 
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="preferencat.css">
 
-        <!-- Search bar -->
-        <form class="d-flex" action="search_product.php" method="get">
-            <input class="form-control me-2" type="search" placeholder="Search" 
-            aria-label="Search" name="search_data">
-        <input type="submit" value="Search" class="btn  btn-outline-light"
-        name="search_data_product">
-        </form>
-        <li class="nav-item">
-            <a class="nav-link" href="card.php"> <i class="fas fa-shopping-cart"></i><sup>
-                <?php
-                card_item();
-                ?>
-            </sup></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#"> Total price: <?php  total_cart_price();?></a>
-        </li>
-    
-</ul>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+    <!-- font awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+
+    <body>
+        
 
 
 <!-- calling card function -->
-<?php
-       card(); 
-?>
+
 <!-- third child -->
 <div class="bg-light"></div>
  <h3 class="text-center">Hidden Store</h3>
@@ -135,10 +118,11 @@ session_start();
      
  </div>
 
+
  <?php
 // përfshini klasën UserPreferences dhe lidhuni me db
 include_once 'UserPreferences.php';
-$servername = "127.0.0.1:3307";
+$servername = "127.0.0.1:3310";
 $username = "root@localhost";
 $password = "";
 $dbname = "mystore";
@@ -161,12 +145,13 @@ $productPref = $userPref->getPreference();
         <h1>Zgjidhni preferencat e produktit</h1>
         <div class="preferences-container">
             <form method="post">
-                <label for="product_type">Lloji i produktit:</label>
+                <label for="product_type">Brands</label>
                 <select name="product_type" id="product_type">
                     <option value="none" <?php if ($productPref === 'none') echo 'selected' ?>>Asnjë</option>
-                    <option value="face" <?php if ($productPref === 'face') echo 'selected' ?>>Kujdesi për fytyrën</option>
-                    <option value="body" <?php if ($productPref === 'body') echo 'selected' ?>>Kujdesi për trupin</option>
-                    <option value="hair" <?php if ($productPref === 'hair') echo 'selected' ?>>Kujdesi për flokët</option>
+                    <option value="face" <?php if ($productPref === 'face') echo 'selected' ?>>Klairs</option>
+                    <option value="body" <?php if ($productPref === 'body') echo 'selected' ?>>CosRX</option>
+                    <option value="hair" <?php if ($productPref === 'hair') echo 'selected' ?>>Neogen</option>
+                    <option value="hair" <?php if ($productPref === 'hair') echo 'selected' ?>>Dr.Jart+</option>
                 </select>
                 <button class="save-button" type="submit">Ruaj Preferencën</button>
             </form>

@@ -1,42 +1,17 @@
 <!-- connect file -->
 <?php
     include('../includes/connect.php');  //dont use dots cause folders are in the same level
-include('../functions/common_functions.php');
+// include('../functions/common_functions.php');
+?>
+<?php
 session_start();
 ?>
-
-
-<html>
-<head>
-<link rel="stylesheet" href="header.css">
-	<link rel="stylesheet" href="header.html">
-    <link rel="stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"  >
-    <link rel="stylesheet" href = "style.css">
-    <link rel="stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"  >
-    <link rel="stylesheet" href = "style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
-    <!-- font awesome link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    <style>
-    .card_img{
-    width:80px;
-    height:80px;
-    object-fit:contain;
-}
-
-    </style>
-</head>
-<!-- calling card function -->
 <?php
-    card(); 
+include('header1.php');
 ?>
 
-    <body>
 
- 
-    <nav class ="navbar navbar-expand-lg navbar-dark bg-secondary">
+<nav class ="navbar navbar-expand-lg navbar-dark bg-secondary">
 <ul class="navbar-nav me-auto">
     <?php
         if(!isset($_SESSION['username'])){
@@ -61,26 +36,37 @@ session_start();
         }
 ?>
 </ul>
-
-
- <!-- #region -->
-        <li class="nav-item">
-            <a class="nav-link" href="card.php"><i class="fas fa-shopping-cart"></i><sup>
-                <?php
-                card_item();
-                ?>
-            </sup></a>
-        </li>
-
-    
-</ul>
 </nav>
 
+<html>
+<head>
+<link rel="stylesheet" href="header.css">
+	<link rel="stylesheet" href="header.html">
+    <link rel="stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"  >
+    <link rel="stylesheet" href = "style.css">
+    <link rel="stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"  >
+    <link rel="stylesheet" href = "style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+    <!-- font awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <style>
+    .card_img{
+    width:80px;
+    height:80px;
+    object-fit:contain;
+}
+
+    </style>
+</head>
 
 <!-- third child --> 
 <div class="bg-light"></div>
- <h3 class="text-center">Hidden Store</h3>
- <p class="text-center">Communciation is at the heart of the e-commerce and community</p>
+<div class="bg-light"></div>
+ <h3 class="text-center mt-5">Pearl Skin Community</h3>
+ <p class="text-center">“The best foundation you can wear is glowing healthy skin.”</p>
+</div>
  
  
 <!-- fourth child -->

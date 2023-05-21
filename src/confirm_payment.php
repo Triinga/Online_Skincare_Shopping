@@ -52,11 +52,11 @@ if(isset($_POST['confirm_payment'])){
                 <div class="form-outline my-4 text-center w-50 m-auto">
                     <select name="payment_mode" class = "form-select w-50 m-auto text-center" >
                         <option>Select payment mode</option>
-                        <option>UPI</option>
-                        <option>Netbanking</option>
-                        <option>Pay pal</option>
+                        <option>Raiffeisen Bank</option>
+                        <option>Procredit Bank</option>
+                        <option>NLB</option>
                         <option>Cash on delivery </option>
-                        <option>Payoffline </option>
+                        <option>Payoffline</option>
                     </select>
                 </div>
                 <div class="form-outline my-4 text-center w-50 m-auto">
