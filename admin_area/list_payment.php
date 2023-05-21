@@ -15,7 +15,7 @@
             <th>Invoice number</th>
             <th>Amount</th>
             <th>Payment mode</th>
-            <th>Order data</th>
+            <th>Order date</th>
             <th>Delete</th>
         </tr>
         </thead>
@@ -24,18 +24,17 @@
             $number=0;
             while($row_data=mysqli_fetch_assoc($result)){
                 $order_id=$row_data['order_id'];
-                $payment_id=$row_data['payment_id'];
-                $amount=$row_data['amount_due'];
+                $payment_id = $row_data['payment_id'];
+                $amount = $row_data['amount'];
                 $invoice_number=$row_data['invoice_number'];
                 $payment_mode=$row_data['payment_mode'];
-                 $date=$row_data['date']; 
+                $date=$row_data['date']; 
                 $number++;
                 echo " 
                 <tr>
                 <td>$number</td>
                 <td>$invoice_number</td>
                 <td>$amount</td>
-                <td>$total_products</td>
                 <td>$payment_mode</td>
                 <td>$date</td>
                 <td><a href='' class='text-light'><i class='fas fa-trash'></i></a></td>
