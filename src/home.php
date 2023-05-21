@@ -25,40 +25,10 @@
     
   </head>
   <body>
-    <header>
-      <a class="logo" href="#"><img src="../fotot/logo2.png" id="logo" alt="Logo" style="width:100px"></a>
-      <div class="items">
-          <input type="search" class="search" placeholder=" &ccedil;fare po kerkoni?">
-          <button type="submit" class="fas fa-search"></button>
-          <div class="login">
-              <a href="Login.html" target="_blank"><i class="fa-solid fa-user"></i></a>
-          </div>
-      </div>
-  </header>
-  
-  <header class="hdr">
-      <nav>
-          <ul class="nav_linqet">
-              <li><a href="home.php">Home</a></li>
-              <li class="submenu">
-                  <a href="products.php">Products</a>
-                  <ul class="submenu-items">
-                    
-                      <?php
-                      include('../includes/connect.php'); //dont use dots cause folders are in the same level
-                      include('../functions/common_functions.php');
-                      getCategories();
-                    ?>
-                   
-                  </ul>
-              </li>
-              <li><a href="about-us.html">About us</a></li>
-              <li><a href="Login.html">Log in</a></li>
-              <li><a href="contact-us.html">Contact us</a></li>
-              <li><a href="faq.php">FAQ</a></li>
-          </ul>
-      </nav>
-  </header>
+    <?php
+ include('header.php');
+
+ ?>
   
   <style>
       .submenu-items {
