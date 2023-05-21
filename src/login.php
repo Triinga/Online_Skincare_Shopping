@@ -54,7 +54,7 @@ include('../functions/common_functions.php');
                             </div>
                         </div>
                         <div class="g-signin2" data-onsuccess="onSignIn"></div>
-                        <label class="remember-me"><input type="checkbox">Remember me</label>
+                        
                         <div ><p>Don't have an account? <a href="signup.php" class="register-here"><i>Register here</i></a></p></div>
                     </form> 
                         </form>
