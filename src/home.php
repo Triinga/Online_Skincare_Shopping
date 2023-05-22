@@ -93,7 +93,8 @@
     <span data-tab-name="#tab1">Të rejat</span>
     <span data-tab-name="#tab2">Në zbritje</span>
 </div>
-
+<div id="content">
+        
 <div class="tab-content">
     <div class="tabs_tab active" id="tab1" data-tab-content>
         <div> 
@@ -275,10 +276,31 @@
         </div>
         <p class="copyright">&copy; PearlSkin</p>
       </section>
-        
+        <!-- Content will be loaded here -->
+    </div>
     </div>
     </section>
     <script src="home1.js"></script>
+    <script>
+        $(document).ready(function () {
+            loadContent();
+
+            // Function to load content using AJAX
+            function loadContent() {
+                $.ajax({
+                    url: 'home.php',
+                    type: 'GET',
+                    success: function (response) {
+                        $('#content').html(response);
+                    },
+                    error: function (xhr, status, error) {
+                        console.error(error);
+                    }
+                });
+            }
+        });
+    </script>
+
   </body>
 </html>
 
