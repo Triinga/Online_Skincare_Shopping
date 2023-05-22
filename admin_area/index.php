@@ -208,41 +208,8 @@ include('../functions/common_functions.php');
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   
 
+</script>  
 
-<script>
-  //Getting all the links from admin-actions class
-  var adminLinks = document.getElementsByClassName('admin-actions')[0].getElementsByTagName('a');
-  for (var i = 0; i < adminLinks.length; i++) {
-    var link = adminLinks[i];
-    var linkId = link.getAttribute("id");
-    
-    // Exclude "Logout" and "Insert products" links
-    if (linkId !== "logout" && linkId !== "insertProduct") {
-      link.addEventListener("click", makeRequest);
-    }
-  }
-  
-  function makeRequest(event) {
-    event.preventDefault(); // Prevent the default link behavior (page refresh)
-    
-    var url = this.href; // Get the link's URL
-    
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState === XMLHttpRequest.DONE) {
-        if (xhr.status === 200) {
-          // Update the container with the response data
-          var container = document.querySelector('.container');
-          container.innerHTML = xhr.responseText;
-        } else {
-          console.log('Request failed. Status:', xhr.status);
-        }
-      }
-    };
-    xhr.open('GET', url, true); // Open the URL LINK with AJAX
-    xhr.send(); //Sending the AJAX
-  }
-</script>
 
 </body>
 </html>

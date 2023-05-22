@@ -1,3 +1,37 @@
+<?php
+session_start();
+?>
+<?php
+include('header1.php');
+?>
+
+<nav class ="navbar navbar-expand-lg navbar-dark bg-secondary">
+<ul class="navbar-nav me-auto">
+    <?php
+        if(!isset($_SESSION['username'])){
+            echo "   <li class='nav-item'>
+            <a class='nav-link' href='#'>Welcome Guest</a>
+            </li>"; 
+        }else{
+            echo "<li class='nav-item'>
+            <a class='nav-link' href='#'>Welcome ".$_SESSION['username']."</a>
+            </li>";
+        }
+
+        
+        if(!isset($_SESSION['username'])){
+            echo "<li class='nav-item'>
+            <a class='nav-link' href='login.php'>Login</a>
+            </li>";
+        }else{
+            echo "<li class='nav-item'>
+            <a class='nav-link' href='logout.php'>Logout</a>
+            </li>";
+        }
+?>
+</ul>
+</nav>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -81,7 +115,7 @@
 			$city = $_POST['city'];
 			$ask = $_POST['ask'];
 		
-			$host = '127.0.0.1:3307';
+			$host = '127.0.0.1:3310';
 			$user = 'root@localhost';
 			$pass = '';
 			$dbname = 'mystore';

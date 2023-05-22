@@ -1,41 +1,41 @@
 <?php
     //including connect file 
     include('../includes/connect.php');
-        //getting products 
-        function getProducts(){
-            global $con;
-            //condition to check isset or not
-            if(!isset($_GET['category'])){
-                if(!isset($_GET['brand'])){
-            $select_query="Select * from `products`";
-            $result_query=mysqli_query($con, $select_query);
-        
-            while($row = mysqli_fetch_assoc($result_query)){ ;//to access all tha data in the database
-            // echo $row['product_title'];
-            $product_id=$row['product_id'];
-            $product_title=$row['product_title'];
-            $product_description=$row['product_description'];
-            $product_image1=$row['product_image1'];
-            $product_price=$row['product_price'];
-            $category_id=$row['category_id'];
-            $brand_id=$row['brand_id'];
-            echo  "<div class='col-md-4 mb-5'>
-            <div class='card' >
-                <img src='../admin_area/product_images/$product_image1' class='card-img-top' alt=' $product_title'>
-                <div class='card-body'>
-                    <h5 class='card-title'>$product_title</h5>
-                    <p class='card-text'> $product_description</p>
-                    <p class='card-text'> $product_price</p>
-                    <a href='products.php?add_to_cart=$product_id' class='btn btn-info d-flex justify-content-center'>Add to cart</a>
-
-                </div>
-                </div>
-            </div>"; //<!-- //whenever dadta we are habing here that will bbe displayed in horizntal -->
+    //getting products 
+    function getProducts(){
+        global $con;
+        //condition to check isset or not
+        if(!isset($_GET['category'])){
+            if(!isset($_GET['brand'])){
+        $select_query="Select * from `products`";
+        $result_query=mysqli_query($con, $select_query);
     
-            }
-            }
-            }
-            }
+        while($row = mysqli_fetch_assoc($result_query)){ ;//to access all tha data in the database
+        // echo $row['product_title'];
+        $product_id=$row['product_id'];
+        $product_title=$row['product_title'];
+        $product_description=$row['product_description'];
+        $product_image1=$row['product_image1'];
+        $product_price=$row['product_price'];
+        $category_id=$row['category_id'];
+        $brand_id=$row['brand_id'];
+        echo  "<div class='col-md-4 mb-5'>
+        <div class='card' >
+            <img src='../admin_area/product_images/$product_image1' class='card-img-top' alt=' $product_title'>
+            <div class='card-body'>
+                <h5 class='card-title'>$product_title</h5>
+                <p class='card-text'> $product_description</p>
+                <p class='card-text'> $product_price</p>
+                <a href='products.php?add_to_cart=$product_id' class='btn btn-info d-flex justify-content-center'>Add to cart</a>
+
+            </div>
+            </div>
+        </div>"; //<!-- //whenever dadta we are habing here that will bbe displayed in horizntal -->
+   
+        }
+        }
+        }
+        }
 
 
 
@@ -61,7 +61,7 @@ function getUniqueCategories(){
         $brand_id=$row['brand_id'];
         echo  "<div class='col-md-4 mb-2'>
         <div class='card' >
-            <img src='./admin_area/product_images/$product_image1' class='card-img-top' alt=' $product_title'>
+            <img src='../admin_area/product_images/$product_image1' class='card-img-top' alt=' $product_title'>
             <div class='card-body'>
                 <h5 class='card-title'>$product_title</h5>
                 <p class='card-text'> $product_description</p>
@@ -100,7 +100,7 @@ $category_id=$row['category_id'];
 $brand_id=$row['brand_id'];
 echo  "<div class='col-md-4 mb-2'>
 <div class='card' >
-    <img src='./admin_area/product_images/$product_image1' class='card-img-top' alt=' $product_title'>
+    <img src='../admin_area/product_images/$product_image1' class='card-img-top' alt=' $product_title'>
     <div class='card-body'>
         <h5 class='card-title'>$product_title</h5>
         <p class='card-text'> $product_description</p>

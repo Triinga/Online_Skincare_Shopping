@@ -45,4 +45,6 @@ if(isset($_COOKIE['shopping_cart'])) {
     echo "Cmimi: $" . $product['price'] . "<br/><br/>";
   }
 }
+
+
 ?>

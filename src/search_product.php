@@ -1,11 +1,12 @@
 <!-- connect file -->
 <?php
     include('../includes/connect.php');    //dont use dots cause folders are in the same level
-include('../functions/common_functions.php');
+// include('../functions/common_functions.php');
+include('header1.php');
 ?>
 
 
-<nav class ="navbar navbar-expand-lg navbar-dark bg-secondary">
+<!-- <nav class ="navbar navbar-expand-lg navbar-dark bg-secondary">
 <ul class="navbar-nav me-auto">
     <?php
         if(!isset($_SESSION['username'])){
@@ -30,7 +31,7 @@ include('../functions/common_functions.php');
         }
 
     ?>
-</ul>
+</ul> -->
 
 <html>
 <head>

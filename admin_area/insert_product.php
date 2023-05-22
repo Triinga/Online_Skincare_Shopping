@@ -11,24 +11,20 @@ $product_price=$_POST['product_price'];
 $product_status = 'true'; 
 //accessing images 
 $product_image1=$_FILES['product_image1']['name'];
-// $product_image2=$_FILES['product_image2']['name'];
-// $product_image3=$_FILES['product_image3']['name']; 
+
 //accessing image temporary name
 $temp_image1=$_FILES['product_image1']['tmp_name'];
-// $temp_image2=$_FILES['product_image2']['tmp_name'];
-// $temp_image3=$_FILES['product_image3']['tmp_name'];
+
 //checking empty condition
 if($product_title== '' or $description == '' or $product_keywords == '' or $product_category == '' or 
 $product_brands == '' or  $product_price=='' or $product_image1==''
-//  or $product_image2==''  or $product_image3==''
 ){
 
 echo"<script>alert('Please fill all the available fields')</script>";
 exit();
 }else{ //now whenever i insert the images inside the home it will be moved by itsel
     move_uploaded_file($temp_image1,"./product_images/$product_image1");
-    // move_uploaded_file($temp_image2,"./product_images/$product_image2");
-    // move_uploaded_file($temp_image3,"./product_images/$product_image3");
+
 
     //insert query
     $insert_products="insert into `products` (
@@ -106,11 +102,7 @@ exit();
                     }
 
 
-                    ?>  <!--  kur ta insertojsh ni produkt per me tdal kategorite qe jane ndatabaze te -selet a category -->
-                        <!-- <option value="">Category1</option>
-                        <option value="">Category12</option>
-                        <option value="">Category3</option>
-                        <option value="">Category4</option> -->
+                    ?> 
                 </select>
             </div>
             <!-- brands -->
@@ -138,19 +130,7 @@ exit();
             <input type="file" name="product_image1" id="product_image1" class="form-control"
              require="required"> <!-- name you can give whatever you want but id the same as the for os the label -->
             </div>
-               <!-- Image 2 -->
-               <!-- <div class="form-outline mb-4 w-50 m-auto">
-                <label for="product_image2" class="form-label ">Product Image 2</label>
-            <input type="file" name="product_image2" id="product_image2" class="form-control"
-             require="required">  name you can give whatever you want but id the same as the for os the label 
-            </div> -->
-               <!-- Image 3 -->
-               <!-- <div class="form-outline mb-4 w-50 m-auto">
-                <label for="product_image3" class="form-label ">Product Image 3</label>
-            <input type="file" name="product_image3" id="product_image3" class="form-control"
-             require="required"> name you can give whatever you want but id the same as the for os the label  -->
-            </div>
-              <!-- price -->
+           
                 
             <div class="form-outline mb-4 w-50 m-auto">
                 <label for="product_price" class="form-label ">Product price</label>

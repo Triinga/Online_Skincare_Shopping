@@ -1,7 +1,7 @@
 <?php
     include('../includes/connect.php'); 
     include('../functions/common_functions.php');
-    
+
     card(); 
 ?>
 <!DOCTYPE html>
@@ -23,17 +23,21 @@
         <!-- Brand/logo -->
         <!-- <a class="navbar-brand" href="#"><img src="../fotot/logo2.png" id="logo" alt="Logo" style="width:100px"></a> -->
         <a class="navbar-brand" href="#">Pearl Skin</a>
-        
+
         <!-- Welcome message and login/logout link -->
         <?php
-            if (!isset($_SESSION['username'])) {
-                echo "<span class='welcome-msg'>Welcome Guest</span>";
-                echo "<a class='icon-link' href='Login.php' target='_blank'><i class='fas fa-user'></i></a>";
-            } else {
-                echo "<span class='welcome-msg'>Welcome " . $_SESSION['username'] . "</span>";
-                echo "<a class='login-link' href='logout.php'>Logout</a>";
-            }
-        ?>
+            // if (!isset($_SESSION['username'])) {
+            //     echo "<span class='welcome-msg'>Welcome Guest</span>";
+            // } else {
+            //     echo "<span class='welcome-msg'>Welcome " . $_SESSION['username'] . "</span>";
+            // }
+
+            // if (!isset($_SESSION['username'])) {
+            //     echo "<a class='icon-link' href='Login.php' target='_blank'><i class='fa-solid fa-user'></i></a>";
+            // } else {
+            //     echo "<a class='login-link' href='logout.php'>Logout</a>";
+            // }
+            // ?>
 
         <!-- Responsive menu toggle button -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,15 +54,18 @@
                     <a class="nav-link" href="aboutus.php">About Us</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="products.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Products 
-                    </a>
-                    <ul class="dropdown-menu">
-                        <?php
-                            getCategories();
-                        ?>
-                    </ul>
-                </li>
+    <a class="nav-link dropdown-toggle" href="products.php" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Products
+    </a>
+    <ul class="dropdown-menu"  aria-labelledby="productsDropdown">
+    <li><a class="dropdown-item" href="products.php">Products</a></li>
+<li>     <?php
+            getCategories();
+        ?>
+        </li>
+    </ul>
+</li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="faq.php">FAQ</a>
                 </li>
@@ -95,7 +102,7 @@
     .welcome-msg {
         margin-right: 10px;
     }
-    
+
     .navbar-nav {
         display: flex;
         align-items: center;
